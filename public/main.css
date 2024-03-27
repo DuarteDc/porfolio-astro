@@ -1,0 +1,114 @@
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'VT323';
+  src: url('./fonts/VT323.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.card-border {
+  box-shadow: -6px 0 0 0 black,
+    6px 0 0 0 black,
+    0 -6px 0 0 black,
+    0 6px 0 0 black;
+}
+
+.pseudo-boder::after,
+.pseudo-boder::before {
+  box-shadow: -6px 0 0 0 black,
+    6px 0 0 0 black,
+    0 -6px 0 0 black,
+    0 6px 0 0 black;
+}
+
+.button-animation::before {
+  animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.text-jumping {
+  animation: jumping 2s linear infinite;
+}
+
+@keyframes jumping {
+
+  0%,
+  100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+
+.text-jumping::after {
+  animation: jumping-shadow 2s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes jumping-shadow {
+
+  0%,
+  100% {
+    width: 45%;
+    transform: translateY(50px);
+  }
+
+  25% {
+    width: 50%;
+    transform: translateY(50px);
+  }
+
+  50% {
+    width: 60%;
+    transform: translateY(50px);
+  }
+
+  75% {
+    width: 50%;
+    transform: translateY(50px);
+  }
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.paragraph>p {
+  font-family: 'Roboto';
+}
+
+.slide {
+  animation: 12s slide infinite linear;
+}
+
+@keyframes slide {
+  from{
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
