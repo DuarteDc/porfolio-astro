@@ -101,7 +101,7 @@
 }
 
 .slide {
-  animation: 12s slide infinite linear;
+  animation: 15s slide infinite linear;
 }
 
 @keyframes slide {
