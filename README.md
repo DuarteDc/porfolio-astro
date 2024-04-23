@@ -1,4 +1,4 @@
-# Portafolio con Astrp
+# Portafolio con Astro
 
 > 🧑‍🚀 **Portafolio personal creado con Astro y TailwindCss**
 

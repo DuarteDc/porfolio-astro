@@ -1,4 +1,7 @@
-/* Register your custom font family and tell the browser where to find it. */
+body {
+  cursor: url('./imgs/cursor.webp') 14 0, default;
+}
+
 @font-face {
   font-family: 'VT323';
   src: url('./fonts/VT323.ttf');
@@ -12,6 +15,10 @@
     6px 0 0 0 black,
     0 -6px 0 0 black,
     0 6px 0 0 black;
+}
+
+.pointer {
+  cursor: url('./imgs/cursor-pointer.webp') 14 0, pointer;
 }
 
 .pseudo-boder::after,
@@ -105,9 +112,10 @@
 }
 
 @keyframes slide {
-  from{
+  from {
     transform: translateX(0%);
   }
+
   to {
     transform: translateX(-100%);
   }
