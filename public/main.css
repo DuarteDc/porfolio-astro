@@ -4,7 +4,7 @@ body {
 
 @font-face {
   font-family: 'VT323';
-  src: url('./fonts/VT323.ttf');
+  src: url('./fonts/VT323.woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -97,7 +97,7 @@ body {
 
 @font-face {
   font-family: 'Roboto';
-  src: url('./fonts/Roboto-Regular.ttf');
+  src: url('./fonts/Roboto-Regular.woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

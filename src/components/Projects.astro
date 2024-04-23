@@ -1,0 +1,57 @@
+---
+import Card from "./Card.astro";
+import CodeIcon from "./icons/CodeIcon.astro";
+
+const PROJECTS = [
+    {
+        title: "Wapizima Ecommerce",
+        description: "Ecommerce de productos de belleza a nivel mundial. Creado desde cero con Next.js, React y Tailwind CSS.",
+        link: "https://wapizima.com/",
+        image: "https://res.cloudinary.com/drwfhrssd/image/upload/v1713894330/wapizima-portfolio.png",
+        company: "Digital Pineapple",
+        time: "2022 - 2023",
+    },
+    {
+        title: "Analisis de Riesgos",
+        description: "Sistema para el analisis de riesgos dentro de instituciones gubernamentables. Creada desde cero con React, Tailwind CSS, PHP 8 y PostgreSQL",
+        link: "https://miigecem.edomex.gob.mx/cuestionario/",
+        github: "https://github.com/DuarteDc/FDRPSE",
+        image: "https://res.cloudinary.com/drwfhrssd/image/upload/v1713900410/tbahxwr0dkbs7rownwou.png",
+        company: "IGECEM",
+        time: "2024",
+    },
+    {
+        title: "Wapizima OS",
+        description: "Plataforma de cursos de belleza en línea. Creada desde cero con Laravel 8, Tailwind CSS Y MySQL",
+        link: "https://wapizima.com.mx/",
+        image: "https://res.cloudinary.com/drwfhrssd/image/upload/v1713899328/wos-portfolio.png",
+        company: "Digital Pineapple",
+        time: "2021 - 2022",
+    },
+    {
+        title: "Inventario",
+        description:
+            "Plataforma para la administración de documentación. Creada desde cero con React, Tailwind CSS, PPH 8, PostgreSQL",
+        link: "https://archivoigecem.edomex.gob.mx/",
+        github: "https://github.com/DuarteDc/IVDA-Project",
+        image: "https://camo.githubusercontent.com/a1d4b3050b5c45608e7aba6086bfdfaf5706b9b9b6e770fa3cb1c9b013617239/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f6472776668727373642f696d6167652f75706c6f61642f76313730363033373231302f6e66636b6d35656e767868686f776b77633366742e706e67",
+        company: "IGECEM",
+        time: "2023",
+    },
+    
+];
+---
+
+<section
+    class="w-ful py-20 text-white [&>article]:transition-all [&>article]:duration-500"
+>
+    <h3
+        class="text-5xl lg:tracking-widest text-white mb-24 flex justify-center items-center [&>svg]:mr-2 [&>svg]:text-yellow-400"
+    >
+        <CodeIcon width="50" height="50" /> Proyectos
+    </h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20">
+        {PROJECTS.map((project) => <Card {...project} />)}
+    </div>
+</section>

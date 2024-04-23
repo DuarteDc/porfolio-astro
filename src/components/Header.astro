@@ -1,5 +1,6 @@
 ---
 import GithubIcon from "./icons/GithubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
 ---
 
 <header class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-10 uppercase">
@@ -32,7 +33,7 @@ import GithubIcon from "./icons/GithubIcon.astro";
             Software developer
         </h2>
     </div>
-    <div class="flex items-center justify-around my-5">
+    <div class="flex items-center gap-4 justify-between md:justify-around my-5">
         <span
             class="bg-orange-600 py-3 flex justify-center items-center relative
     after:absolute after:bottom-0 after:z-10 after:h-1 after:bg-orange-800 after:w-full [&>i]:absolute [&>i]:h-2 [&>i]:w-2
@@ -46,6 +47,19 @@ import GithubIcon from "./icons/GithubIcon.astro";
             <i class="bottom-2 left-1"></i>
             <a href="" class="pointer">Ver CV</a>
         </span>
+        <a href="https://mx.linkedin.com/in/duartedc" target="_blank" class="pointer">
+            <span
+                class="bg-blue-600 py-3 px-4 flex justify-center items-center relative
+    after:absolute after:bottom-0 after:z-10 after:h-1 after:bg-blue-700 after:w-full after:transition-all after:duration-500 [&>i]:absolute [&>i]:h-2 [&>i]:w-2 group
+    [&>i]:bg-blue-700 w-auto hover:bg-blue-500 transition-all duration-150 card-border pointer"
+            >
+                <i class="group-hover:bg-blue-700 top-1 right-1"></i>
+                <i class="group-hover:bg-blue-700 top-1 left-1"></i>
+                <i class="group-hover:bg-blue-700 bottom-2 right-1"></i>
+                <i class="group-hover:bg-blue-700 bottom-2 left-1"></i>
+                <LinkedinIcon />
+            </span>
+        </a>
         <a href="https://github.com/DuarteDc" target="_blank" class="pointer">
             <span
                 class="bg-[#010409] py-3 px-4 flex justify-center items-center relative
