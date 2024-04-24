@@ -25,13 +25,13 @@ const { title, description, link, github, image, company, time }: Props =
 	before:px-5
 	before:bg-blue-600 after:bg-orange-600 pseudo-boder after:rounded-lg before:rounded-lg
 	after:w-full after:h-full after:absolute after:-z-20 after:-top-7 after:left-7 after:content-[attr(data-company)]
-	after:px-3 paragraph [&>p]:text-sm"
+	after:px-3 paragraph [&>p]:text-sm -ml-5"
 >
-	<figure class="bg-black h-[11rem] w-full">
+	<figure class="bg-black h-[11rem] w-full aspect-square">
 		<img
 			src={image}
 			alt="wapizima"
-			class="h-full w-full object-contain bg-no-repeat bg-center card-border"
+			class="h-full w-full object-fill md:object-cover bg-no-repeat card-border p-1 md:p-2"
 			loading="lazy"
 		/>
 	</figure>

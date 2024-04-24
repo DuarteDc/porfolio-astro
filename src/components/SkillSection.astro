@@ -11,9 +11,13 @@ import MySQLIcon from "./icons/MySQLIcon.astro";
 import MongoIcon from "./icons/MongoIcon.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro";
 import LaravelIcon from "./icons/LaravelIcon.astro";
+import HTMLIcon from "./icons/HTMLIcon.astro";
+import CssIcon from "./icons/CssIcon.astro";
+import ReduxIcon from "./icons/ReduxIcon.astro";
+import TypeScriptIcon from "./icons/TypeScriptIcon.astro";
 ---
 
-<section class="overflow-hidden whitespace-nowrap lg:px-2" id="section-skills">
+<section class="whitespace-nowrap lg:px-2" id="section-skills">
     <h3
         class="text-5xl lg:tracking-widest text-white mb-24 flex justify-center items-center [&>svg]:mr-2 [&>svg]:text-yellow-400"
     >
@@ -34,9 +38,7 @@ import LaravelIcon from "./icons/LaravelIcon.astro";
         </figure>
         <div>
             <div class="flex">
-                <div>
-                    <span>EDUARDO DUARTE CLEMENTE</span>
-                </div>
+                <span>EDUARDO DUARTE CLEMENTE</span>
             </div>
             <div
                 class="[&>*:last-child]:flex [&>*:last-child]:items-center [&>*:last-child>svg]:text-yellow-600 [&>*:last-child>svg]:mr-4"
@@ -52,9 +54,9 @@ import LaravelIcon from "./icons/LaravelIcon.astro";
             </div>
         </div>
         <div class="w-full">
-            <div class="flex justify-center flex-wrap gap-4">
+            <div class="flex justify-center flex-wrap gap-2 md:gap-4">
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-yellow-400 relative after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-yellow-400 relative after:bottom-0 m-2
         after:absolute after:h-2 after:w-full after:bg-yellow-600 py-1
         before:absolute before:w-2 before:h-full before:bg-yellow-600 before:right-0"
                 >
@@ -62,7 +64,7 @@ import LaravelIcon from "./icons/LaravelIcon.astro";
                 </span>
 
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-blue-400 relative after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-blue-400 relative after:bottom-0 m-2
         after:absolute after:h-2 after:w-full after:bg-blue-600 py-1
         before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
                 >
@@ -70,14 +72,14 @@ import LaravelIcon from "./icons/LaravelIcon.astro";
                 </span>
 
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-green-400 relative after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-green-400 relative after:bottom-0 m-2
         after:absolute after:h-2 after:w-full after:bg-green-600 py-1
         before:absolute before:w-2 before:h-full before:bg-green-600 before:right-0"
                 >
                     <NodeIcon width="40" height="50" />
                 </span>
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-blue-400 relative after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-blue-400 relative after:bottom-0 m-2
 after:absolute after:h-2 after:w-full after:bg-blue-600 py-1
 before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
                 >
@@ -85,7 +87,7 @@ before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
                 </span>
 
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-black relative text-white after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-black relative text-white after:bottom-0 m-2
     after:absolute after:h-2 after:w-full after:bg-zinc-900 py-1
     before:absolute before:w-2 before:h-full before:bg-zinc-900 before:right-0"
                 >
@@ -93,7 +95,7 @@ before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
                 </span>
 
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-purple-400 relative after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-purple-400 relative after:bottom-0 m-2
         after:absolute after:h-2 after:w-full after:bg-purple-600 py-1
         before:absolute before:w-2 before:h-full before:bg-purple-600 before:right-0"
                 >
@@ -101,14 +103,14 @@ before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
                 </span>
 
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-red-400 relative after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-red-400 relative after:bottom-0 m-2
         after:absolute after:h-2 after:w-full after:bg-red-600 py-1
         before:absolute before:w-2 before:h-full before:bg-red-600 before:right-0"
                 >
                     <LaravelIcon width="40" height="50" />
                 </span>
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-blue-400 relative after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-blue-400 relative after:bottom-0 m-2
     after:absolute after:h-2 after:w-full after:bg-blue-600 py-1
     before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
                 >
@@ -116,11 +118,40 @@ before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
                 </span>
 
                 <span
-                    class="card-border w-[5rem]  flex items-center justify-center bg-green-400 relative after:bottom-0 m-2
+                    class="card-border w-[5rem] flex items-center justify-center bg-green-400 relative after:bottom-0 m-2
         after:absolute after:h-2 after:w-full after:bg-green-600 py-1
         before:absolute before:w-2 before:h-full before:bg-green-600 before:right-0"
                 >
                     <MongoIcon width="40" height="50" />
+                </span>
+                <span
+                    class="card-border w-[5rem] flex items-center justify-center bg-blue-400 relative after:bottom-0 m-2
+after:absolute after:h-2 after:w-full after:bg-blue-600 py-1
+before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
+                >
+                    <TypeScriptIcon width="40" height="50" />
+                </span>
+                <span
+                    class="card-border w-[5rem] flex items-center justify-center bg-orange-400 relative after:bottom-0 m-2
+    after:absolute after:h-2 after:w-full after:bg-orange-600 py-1
+    before:absolute before:w-2 before:h-full before:bg-orange-600 before:right-0"
+                >
+                    <HTMLIcon width="40" height="50" />
+                </span>
+                <span
+                    class="card-border w-[5rem] flex items-center justify-center bg-blue-400 relative after:bottom-0 m-2
+after:absolute after:h-2 after:w-full after:bg-blue-600 py-1
+before:absolute before:w-2 before:h-full before:bg-blue-600 before:right-0"
+                >
+                    <CssIcon width="40" height="50" />
+                </span>
+
+                <span
+                    class="card-border w-[5rem] flex items-center justify-center bg-purple-400 relative after:bottom-0 m-2
+    after:absolute after:h-2 after:w-full after:bg-purple-600 py-1
+    before:absolute before:w-2 before:h-full before:bg-purple-600 before:right-0"
+                >
+                    <ReduxIcon width="40" height="50" />
                 </span>
             </div>
         </div>
