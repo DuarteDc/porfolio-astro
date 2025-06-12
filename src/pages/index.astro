@@ -22,10 +22,10 @@ import Experince from "../components/Experince.astro";
 <script>
   const mouseElement = document.createElement("div");
   mouseElement.classList.add(
-    "w-[40rem]",
-    "h-[40rem]",
+    "w-[50rem]",
+    "h-[50rem]",
     "rounded-full",
-    "blur-3xl",
+    "blur-[30rem]",
     "bg-blue-500/10",
     "fixed",
     "-z-10",
@@ -35,7 +35,6 @@ import Experince from "../components/Experince.astro";
   );
   document.querySelector("main")?.appendChild(mouseElement);
   document.addEventListener("mousemove", (event) => {
-    if (!mouseElement) return;
     mouseElement.style.left = event.clientX - 300 + "px";
     mouseElement.style.top = event.clientY - 300 + "px";
   });
