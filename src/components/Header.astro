@@ -3,87 +3,62 @@ import GithubIcon from "./icons/GithubIcon.astro";
 import LinkedinIcon from "./icons/LinkedinIcon.astro";
 ---
 
-<header class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-10 uppercase">
-  <figure
-    class="bg-black border-emerald-600 border-4 relative before:absolute before:top-0 before:left-4 before:-z-10
-    before:w-[calc(100%-2px)] before:border-4 before:border-emerald-600 before:h-[calc(100%+15px)] rounded-full before:rounded-full mb-10 max-h-[22rem] max-w-[22rem] aspect-square"
-  >
-    <div class="overflow-hidden w-full h-full rounded-full">
-      <img
-        src="/imgs/me-pixel-art.webp"
-        alt="wapizima"
-        class="h-auto w-full object-cover bg-center -mt-12"
-      />
+<header class="flex items-center justify-between">
+  <div>
+    <figure
+      class="bg-black border-emerald-600 relative rounded-full before:rounded-full max-h-[22rem] max-w-[22rem] aspect-square"
+    >
+      <div class="overflow-hidden w-full h-full rounded-full">
+        <img
+          src="/imgs/me-pixel-art.webp"
+          alt="Eduardo Duarte"
+          class="h-auto w-full object-cover bg-center -mt-12"
+        />
+      </div>
+    </figure>
+    <div class="mt-5 normal-text text-white">
+      <div class="paragraph flex items-center gap-2 text-xl">
+        <p>Hola, soy</p>
+        <p class="text-yellow-500">DuarteBv</p>
+        <p class="text-slate-500/50">desarrollador Fullstack</p>
+      </div>
+
+      <div class="mt-5 flex items-center gap-3">
+        <a
+          href="/EduardoDuarteCV.pdf"
+          type="button"
+          target="_blank"
+          class="px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-yellow-500 hover:bg-yellow-500/50"
+        >
+          Curriculum
+        </a>
+        <a
+          href="https://mx.linkedin.com/in/duartedc"
+          type="button"
+          target="_blank"
+          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-yellow-500 hover:bg-yellow-500/50"
+        >
+          <LinkedinIcon width="20" height="20" />
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/DuarteDc"
+          type="button"
+          target="_blank"
+          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-yellow-500 hover:bg-yellow-500/50"
+        >
+          <GithubIcon width="20" height="20" />
+          Github
+        </a>
+      </div>
     </div>
-  </figure>
-  <div
-    class="col-span-2 flex flex-col justify-center tracking-wider lg:tracking-[10px]"
-  >
-    <h1
-      class="text-5xl text-slate-200 font-bold mb-4 text- relative
-    before:content-['Hola,_soy_DuarteBv'] before:absolute before:text-black before:left-0 before:top-2 before:h-full before:w-full before:-z-10"
-    >
-      Hola, soy DuarteBv
-    </h1>
-    <h2
-      class="text-7xl text-emerald-600 font-semibold relative text-jumping before:content-['Software_developer']
-        before:absolute before:text-black before:left-1 before:top-3 before:h-full before:w-full
-        before:-z-10"
-    >
-      Software developer
-    </h2>
   </div>
-  <div class="flex items-center gap-4 justify-between md:justify-start my-5">
-    <a
-      href="/EduardoDuarteCV.pdf"
-      target="_blank"
-      class="bg-orange-600 py-3 flex justify-center items-center relative
-    after:absolute after:bottom-0 after:z-10 after:h-1 after:bg-orange-800 after:w-full [&>i]:absolute [&>i]:h-2 [&>i]:w-2
-    [&>i]:bg-orange-800 hover:bg-orange-500 transition-all duration-150 w-6/12
- hover:before:bg-orange-600/10 before:block pointer
-     card-border"
-    >
-      Ver cv
-      <i class="top-1 right-1"></i>
-      <i class="top-1 left-1"></i>
-      <i class="bottom-2 right-1"></i>
-      <i class="bottom-2 left-1"></i>
-    </a>
-    <a
-      href="https://mx.linkedin.com/in/duartedc"
-      target="_blank"
-      class="pointer"
-      aria-label="LinkedIn"
-    >
-      <span
-        class="bg-blue-600 py-3 px-4 flex justify-center items-center relative
-    after:absolute after:bottom-0 after:z-10 after:h-1 after:bg-blue-700 after:w-full after:transition-all after:duration-500 [&>i]:absolute [&>i]:h-2 [&>i]:w-2 group
-    [&>i]:bg-blue-700 w-auto hover:bg-blue-500 transition-all duration-150 card-border pointer"
-      >
-        <i class="group-hover:bg-blue-700 top-1 right-1"></i>
-        <i class="group-hover:bg-blue-700 top-1 left-1"></i>
-        <i class="group-hover:bg-blue-700 bottom-2 right-1"></i>
-        <i class="group-hover:bg-blue-700 bottom-2 left-1"></i>
-        <LinkedinIcon />
-      </span>
-    </a>
-    <a
-      href="https://github.com/DuarteDc"
-      target="_blank"
-      class="pointer"
-      aria-label="Github"
-    >
-      <span
-        class="bg-[#010409] py-3 px-4 flex justify-center items-center relative
-    after:absolute after:bottom-0 after:z-10 after:h-1 after:bg-[#21262d] after:w-full after:transition-all after:duration-500 [&>i]:absolute [&>i]:h-2 [&>i]:w-2 group
-    [&>i]:bg-[#0d1117] w-auto hover:bg-[#0d1117] transition-all duration-150 card-border pointer"
-      >
-        <i class="group-hover:bg-[#010409] top-1 right-1"></i>
-        <i class="group-hover:bg-[#010409] top-1 left-1"></i>
-        <i class="group-hover:bg-[#010409] bottom-2 right-1"></i>
-        <i class="group-hover:bg-[#010409] bottom-2 left-1"></i>
-        <GithubIcon />
-      </span>
-    </a>
-  </div>
+  <h1 class="text-[8rem] text-white uppercase leading-none">
+    Software <p class="text-slate-500/50">Engineer</p>
+  </h1>
 </header>
+
+<script>
+  //TODO
+  console.log("Change image");
+</script>

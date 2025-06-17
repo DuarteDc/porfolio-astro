@@ -31,10 +31,16 @@ import Experince from "../components/Experince.astro";
     "-z-10",
     "flex",
     "justify-center",
-    "items-center"
+    "items-center",
+    "transition-all",
+    "duration-75",
+    "ease-in-out"
   );
   document.querySelector("main")?.appendChild(mouseElement);
+
   document.addEventListener("mousemove", (event) => {
+    if (!mouseElement) return;
+
     mouseElement.style.left = event.clientX - 300 + "px";
     mouseElement.style.top = event.clientY - 300 + "px";
   });

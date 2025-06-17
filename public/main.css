@@ -3,11 +3,10 @@ body {
 }
 
 @font-face {
-  font-family: 'VT323';
-  src: url('./fonts/VT323.woff2');
-  font-weight: normal;
+  font-family: 'Poppins';
+  src: url('./fonts/Poppins-ExtraBold.woff2');
+  font-weight: 700;
   font-style: normal;
-  font-display: swap;
 }
 
 .card-border {
@@ -119,4 +118,8 @@ body {
   to {
     transform: translateX(-100%);
   }
+}
+
+.normal-text {
+  font-family: 'Roboto';
 }

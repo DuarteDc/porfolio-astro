@@ -14,7 +14,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link
       rel="preload"
-      href="/fonts/VT323.woff2"
+      href="/fonts/Poppins-ExtraBold.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -36,13 +36,13 @@ const { title } = Astro.props;
     <style is:global>
       html,
       body {
-        font-family: "VT323";
+        font-family: "Poppins";
       }
     </style>
     <title>{title}</title>
   </head>
   <body
-    class="flex flex-col items-center w-full relative bg-no-repeat min-h-svh bg-gradient-to-t from-black via-slate-900 to-slate-900 bg-fixed"
+    class="box overflow-x-hidden h-screen flex flex-col items-center w-full relative bg-no-repeat min-h-svh bg-gradient-to-t from-black via-slate-900 to-slate-900 bg-fixed"
   >
     <slot />
   </body>
