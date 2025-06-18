@@ -1,0 +1,33 @@
+<div
+  class="cursor-pointer dock fixed normal-text bottom-10 border text-white rounded-full overflow-hidden flex bg-black/10 backdrop-blur-md opacity-0 transition-all duration-400 ease-in-out hover:opacity-100"
+>
+  <button
+    class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
+    >Inicio</button
+  >
+  <button
+    class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
+    >Experiencia</button
+  >
+  <button
+    class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
+    >Proyectos</button
+  >
+</div>
+
+<script is:inline>
+  const dock = document.querySelector(".dock");
+  document.addEventListener("scroll", (_) => {
+    if (window.scrollY < 100) {
+      dock.classList.remove("opacity-100");
+      dock.classList.remove("opacity-25");
+      dock.classList.add("opacity-0");
+    } else if (window.scrollY > 100 && window.scrollY < 300) {
+      dock.classList.remove("opacity-0");
+      dock.classList.add("opacity-25");
+    } else {
+      dock.classList.remove("opacity-25");
+      dock.classList.add("opacity-100");
+    }
+  });
+</script>
