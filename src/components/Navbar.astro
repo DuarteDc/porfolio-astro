@@ -1,17 +1,24 @@
 <div
-  class="cursor-pointer dock fixed normal-text bottom-10 border text-white rounded-full overflow-hidden flex bg-black/10 backdrop-blur-md opacity-0 transition-all duration-400 ease-in-out hover:opacity-100"
+  class="cursor-pointer dock fixed normal-text bottom-10 border text-white rounded-full overflow-hidden flex bg-black/10 backdrop-blur-md opacity-0 transition-all duration-400 ease-out hover:opacity-100
+    hover:transition-all hover:duration-300 hover:ease-in"
 >
-  <button
+  <a
+    href="#about-me"
+    type="button"
     class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-    >Inicio</button
+    >Inicio</a
   >
-  <button
+  <a
+    href="#experience"
+    type="button"
     class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-    >Experiencia</button
+    >Experiencia</a
   >
-  <button
+  <a
+    href="#projects"
+    type="button"
     class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-    >Proyectos</button
+    >Proyectos</a
   >
 </div>
 
@@ -30,4 +37,6 @@
       dock.classList.add("opacity-100");
     }
   });
+
+  // TODO navigata to sectuib
 </script>

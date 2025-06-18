@@ -123,3 +123,7 @@ body {
 .normal-text {
   font-family: 'Roboto';
 }
+
+html {
+  scroll-behavior: smooth;
+}
