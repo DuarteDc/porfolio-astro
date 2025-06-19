@@ -1,13 +1,15 @@
 <div
-  class="cursor-pointer dock fixed normal-text bottom-10 border text-white rounded-full overflow-hidden flex bg-black/10 backdrop-blur-md opacity-0 transition-all duration-400 ease-out hover:opacity-100
-    hover:transition-all hover:duration-300 hover:ease-in"
+  class="cursor-pointer dock fixed normal-text top-5 text-white rounded-full overflow-hidden flex bg-transparent backdrop-blur-3xl opacity-0 transition-all duration-400 ease-out hover:opacity-100
+    hover:transition-all hover:duration-300 hover:ease-in right-10 before:w-full before:h-full before:absolute before:-z-10 before:bg-black/10"
 >
   <a
-    href="#about-me"
+    href="
+  #about-me"
     type="button"
     class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-    >Inicio</a
   >
+    Inicio
+  </a>
   <a
     href="#experience"
     type="button"
@@ -20,23 +22,23 @@
     class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
     >Proyectos</a
   >
+
+  <script is:inline>
+    const dock = document.querySelector(".dock");
+    document.addEventListener("scroll", (_) => {
+      if (window.scrollY < 100) {
+        dock.classList.remove("opacity-100");
+        dock.classList.remove("opacity-25");
+        dock.classList.add("opacity-0");
+      } else if (window.scrollY > 100 && window.scrollY < 300) {
+        dock.classList.remove("opacity-0");
+        dock.classList.add("opacity-25");
+      } else {
+        dock.classList.remove("opacity-25");
+        dock.classList.add("opacity-100");
+      }
+    });
+
+    // TODO navigata to sectuib
+  </script>
 </div>
-
-<script is:inline>
-  const dock = document.querySelector(".dock");
-  document.addEventListener("scroll", (_) => {
-    if (window.scrollY < 100) {
-      dock.classList.remove("opacity-100");
-      dock.classList.remove("opacity-25");
-      dock.classList.add("opacity-0");
-    } else if (window.scrollY > 100 && window.scrollY < 300) {
-      dock.classList.remove("opacity-0");
-      dock.classList.add("opacity-25");
-    } else {
-      dock.classList.remove("opacity-25");
-      dock.classList.add("opacity-100");
-    }
-  });
-
-  // TODO navigata to sectuib
-</script>
