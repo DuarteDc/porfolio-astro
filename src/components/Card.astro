@@ -3,23 +3,23 @@ import CodeIcon from "./icons/CodeIcon.astro";
 import ExternalLinkIcon from "./icons/ExternalLinkIcon.astro";
 
 interface Props {
-	title: string;
-	description: string;
-	link: string;
-	github?: string;
-	image: string;
-	company: string;
-	time: string;
+  title: string;
+  description: string;
+  link: string;
+  github?: string;
+  image: string;
+  company: string;
+  time: string;
 }
 
 const { title, description, link, github, image, company, time }: Props =
-	Astro.props;
+  Astro.props;
 ---
 
 <article
-	data-company={company}
-	data-time={time}
-	class="rounded-lg card-border relative p-8 [&>h4]:text-4xl [&>h4]:block bg-zinc-900
+  data-company={company}
+  data-time={time}
+  class="rounded-lg card-border relative p-8 [&>h4]:text-4xl [&>h4]:block bg-zinc-900
 	hover:before:-top-8 hover:after:-top-16 before:transition-all before:duration-400 after:transition-all after:duration-500
 	before:w-full before:h-full before:absolute before:-z-10 before:-top-4 before:left-4 before:content-[attr(data-time)]
 	before:px-5
@@ -27,50 +27,54 @@ const { title, description, link, github, image, company, time }: Props =
 	after:w-full after:h-full after:absolute after:-z-20 after:-top-7 after:left-7 after:content-[attr(data-company)]
 	after:px-3 paragraph [&>p]:text-sm -ml-5"
 >
-	<figure class="bg-black h-[11rem] w-full aspect-square">
-		<img
-			src={image}
-			alt="wapizima"
-			class="h-full w-full object-fill md:object-cover bg-no-repeat card-border p-1 md:p-2"
-			loading="lazy"
-			width="300"
-			height="300"
-		/>
-	</figure>
+  <figure class="bg-black h-[11rem] w-full aspect-square">
+    <img
+      src={image}
+      alt="wapizima"
+      class="h-full w-full object-fill md:object-cover bg-no-repeat card-border p-1 md:p-2"
+      loading="lazy"
+      width="300"
+      height="300"
+    />
+  </figure>
 
-	<h4 class="truncate my-4">{title}</h4>
-	<p class="text-xs">
-		{description}
-	</p>
-	<footer
-		class="flex justify-start items-center [&>*:first-child]:mr-8 text-center mt-2 overflow-hidden pb-2 pl-2"
-	>
-		<a
-			href={link}
-			target="_blank"
-			class="block py-2 px-6 card-border mt-2 relative pointer
+  <h4 class="truncate my-4">{title}</h4>
+  <p class="text-xs">
+    {description}
+  </p>
+  <footer
+    class="flex justify-start items-center [&>*:first-child]:mr-8 text-center mt-2 overflow-hidden pb-2 pl-2"
+  >
+    {
+      link && (
+        <a
+          href={link}
+          target="_blank"
+          class="block py-2 px-6 card-border mt-2 relative pointer
 		bg-orange-600 hover:bg-orange-500
 		after:absolute after:bottom-0 after:h-1 after:w-full after:bg-orange-800 after:left-0
 		before:absolute before:bottom-0 before:h-full before:w-1 before:bg-orange-800 before:right-0
 		hover:after:h-[6px] hover:before:w-[6px] transition-all duration-75 after:transition-all after:duration-75
 		before:transition-all before:duration-75 w-auto"
-		>
-			<ExternalLinkIcon />
-		</a>
-		{
-			github && (
-				<a
-					href={github}
-					target="_blank"
-					class="block py-2 px-6 card-border mt-2 relative pointer bg-blue-600 hover:bg-blue-500
+        >
+          <ExternalLinkIcon />
+        </a>
+      )
+    }
+    {
+      github && (
+        <a
+          href={github}
+          target="_blank"
+          class="block py-2 px-6 card-border mt-2 relative pointer bg-blue-600 hover:bg-blue-500
 			after:absolute after:bottom-0 after:h-1 after:w-full after:bg-blue-800 after:left-0
 			before:absolute before:bottom-0 before:h-full before:w-1 before:bg-blue-800 before:right-0
 			hover:after:h-[6px] hover:before:w-[6px] transition-all duration-75 after:transition-all after:duration-75
 			before:transition-all before:duration-75 w-auto"
-				>
-					<CodeIcon />
-				</a>
-			)
-		}
-	</footer>
+        >
+          <CodeIcon />
+        </a>
+      )
+    }
+  </footer>
 </article>
