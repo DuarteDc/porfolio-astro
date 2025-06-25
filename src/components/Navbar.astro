@@ -1,44 +1,54 @@
-<div
-  class="cursor-pointer dock fixed normal-text top-5 text-white rounded-full overflow-hidden flex bg-transparent backdrop-blur-3xl opacity-0 transition-all duration-400 ease-out hover:opacity-100
+<section>
+  <div
+    class="cursor-pointer dock fixed normal-text top-5 text-white rounded-full overflow-hidden flex bg-transparent backdrop-blur-3xl opacity-0 transition-all duration-400 ease-out hover:opacity-100
+  hover:transition-all hover:duration-300 hover:ease-in left-10 before:w-full before:h-full before:absolute before:-z-10 before:bg-black/10"
+  >
+    DuarteBv
+  </div>
+  <div
+    class="cursor-pointer dock fixed normal-text top-5 text-white rounded-full overflow-hidden flex bg-transparent backdrop-blur-3xl opacity-0 transition-all duration-400 ease-out hover:opacity-100
     hover:transition-all hover:duration-300 hover:ease-in right-10 before:w-full before:h-full before:absolute before:-z-10 before:bg-black/10"
->
-  <a
-    href="
+  >
+    <a
+      href="
   #about-me"
-    type="button"
-    class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-  >
-    Inicio
-  </a>
-  <a
-    href="#experience"
-    type="button"
-    class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-    >Experiencia</a
-  >
-  <a
-    href="#projects"
-    type="button"
-    class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-    >Proyectos</a
-  >
+      type="button"
+      class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
+    >
+      Inicio
+    </a>
+    <a
+      href="#experience"
+      type="button"
+      class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
+      >Experiencia</a
+    >
+    <a
+      href="#projects"
+      type="button"
+      class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
+      >Proyectos</a
+    >
 
-  <script is:inline>
-    const dock = document.querySelector(".dock");
-    document.addEventListener("scroll", (_) => {
-      if (window.scrollY < 100) {
-        dock.classList.remove("opacity-100");
-        dock.classList.remove("opacity-25");
-        dock.classList.add("opacity-0");
-      } else if (window.scrollY > 100 && window.scrollY < 300) {
-        dock.classList.remove("opacity-0");
-        dock.classList.add("opacity-25");
-      } else {
-        dock.classList.remove("opacity-25");
-        dock.classList.add("opacity-100");
-      }
-    });
+    <script is:inline>
+      const dock = document.querySelectorAll(".dock");
+      dock.forEach((dock) => {
+        document.addEventListener("scroll", (_) => {
+          if (window.scrollY < 100) {
+            dock.classList.remove("opacity-100");
+            dock.classList.remove("opacity-25");
+            dock.classList.add("opacity-0");
+          } else if (window.scrollY > 100 && window.scrollY < 300) {
+            dock.classList.remove("opacity-0");
+            dock.classList.add("opacity-25");
+          } else {
+            dock.classList.remove("opacity-25");
+            dock.classList.add("opacity-100");
+          }
+        });
+      });
 
-    // TODO navigata to sectuib
-  </script>
-</div>
+      // TODO navigata to sectuib
+    </script>
+  </div>
+</section>
