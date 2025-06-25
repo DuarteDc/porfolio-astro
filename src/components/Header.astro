@@ -4,8 +4,15 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
 ---
 
 <header
-  class="min-h-screen w-full flex items-center justify-center text-white gap-4"
+  class="min-h-screen w-full flex items-center justify-center text-white gap-10"
 >
+  <div class="w-[600px] h-[600px] rounded-full overflow-hidden main-image">
+    <img
+      src="/imgs/me-pixel-art-no-bg.png"
+      alt="cursor pointer"
+      class="w-full h-full object-cover mix-blend-lighten shadow-2xl opacity-90"
+    />
+  </div>
   <div class="w-6/12">
     <span class="flex items-center gap-4">
       <hr class="h-[1px] w-[6rem] bg-white text-white" />
@@ -42,22 +49,4 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
       </a>
     </div>
   </div>
-  <div class="min-h-[calc(100vh-20rem)] absolute top-10 right-0">
-    <iframe
-      src="https://my.spline.design/robotfollowcursorforlandingpagemc-fBt8BDA38DgGcs2I6Xob8frm/"
-      width="100%"
-      height="100%"></iframe>
-  </div>
 </header>
-<!-- 
-<script>
-  import { Application } from "@splinetool/runtime";
-
-  const canvas = document.getElementById("spline-image");
-  if (canvas && canvas instanceof HTMLCanvasElement) {
-    const app = new Application(canvas);
-    app.load(
-      "https://my.spline.design/robotfollowcursorforlandingpagemc-fBt8BDA38DgGcs2I6Xob8frm/"
-    );
-  }
-</script> -->

@@ -127,3 +127,10 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.main-image {
+  mask-image: linear-gradient(black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(black 50%, transparent 100%);
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
