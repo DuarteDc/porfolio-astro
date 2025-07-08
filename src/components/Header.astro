@@ -4,25 +4,31 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
 ---
 
 <header
-  class="min-h-screen w-full flex items-center justify-center text-white gap-10"
+  class="min-h-[calc(100vh-10rem)] w-full flex flex-col lg:flex-row items-center justify-center text-white gap-4 lg:gap-10"
 >
-  <div class="w-[600px] h-[600px] rounded-full overflow-hidden main-image">
+  <div
+    class="w-[250px] h-[250px] xl:w-[400px] xl:h-[400px] rounded-full overflow-hidden main-image"
+  >
     <img
       src="/imgs/me-pixel-art-no-bg.png"
       alt="cursor pointer"
       class="w-full h-full object-cover mix-blend-lighten shadow-2xl opacity-90"
     />
   </div>
-  <div class="w-6/12">
+  <div class="w-full xl:w-6/12">
     <span class="flex items-center gap-4">
-      <hr class="h-[1px] w-[6rem] bg-white text-white" />
+      <hr
+        class="h-[1px] w-[6rem] bg-gradient-to-l from-orange-500 to-orange-900 border-none"
+      />
       <p>DuarteBv</p>
     </span>
-    <h1 class="text-[10rem] break-words w-full leading-none font-[Poppins]">
-      Software Engineer<b class="text-blue-500">.</b>
+    <h1
+      class="text-[3.5rem] lg:text-[5rem] xl:text-[8rem] break-words w-full leading-none font-[Poppins]"
+    >
+      Software Engineer<b class="text-orange-500">.</b>
     </h1>
     <span
-      class="mt-10 block break-words w-7/12 text-sm font-bold text-gray-400"
+      class="mt-10 block break-words w-full lg:w-7/12 text-sm font-bold text-gray-400"
     >
       Passionate about creating engaging user experiences with a full-stack
       approach. I transform ideas into functional products, automate processes,
@@ -33,7 +39,7 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
         href="https://mx.linkedin.com/in/duartedc"
         type="button"
         target="_blank"
-        class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-yellow-500 hover:bg-yellow-500/50"
+        class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-orange-500 hover:bg-orange-500/50 cursor-pointer"
       >
         <LinkedinIcon width="20" height="20" />
         LinkedIn
@@ -42,7 +48,7 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
         href="https://github.com/DuarteDc"
         type="button"
         target="_blank"
-        class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-yellow-500 hover:bg-yellow-500/50"
+        class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-orange-500 hover:bg-orange-500/50 cursor-pointer"
       >
         <GithubIcon width="20" height="20" />
         Github

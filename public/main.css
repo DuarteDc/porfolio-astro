@@ -129,8 +129,8 @@ html {
 }
 
 .main-image {
-  mask-image: linear-gradient(black 50%, transparent 100%);
-  -webkit-mask-image: linear-gradient(black 50%, transparent 100%);
+  mask-image: linear-gradient(rgb(243, 61, 0) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(rgb(233, 106, 21) 50%, transparent 100%);
   mask-size: cover;
   -webkit-mask-size: cover;
 }
