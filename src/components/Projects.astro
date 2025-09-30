@@ -5,6 +5,7 @@ import CodeIcon from "./icons/CodeIcon.astro";
 const PROJECTS = [
   {
     title: "Nomina",
+    important: true,
     description:
       "Desarrollo y mantenimiento de sistema de nómina implementando React, PHP, Docker, Github Actions y CI/CD",
 
@@ -14,6 +15,7 @@ const PROJECTS = [
   },
   {
     title: "Predenuncia",
+    important: true,
     description:
       "Desarrollo de aplicación para el manejo y administración de denuncias NextJs, Docker, Github Actions, Nginx Proxy y CI/CD",
     link: "https://fgjem.edomex.gob.mx/pre-denuncia-en-linea",
@@ -23,6 +25,7 @@ const PROJECTS = [
   },
   {
     title: "Wapizima Ecommerce",
+    important: true,
     description:
       "Ecommerce de productos de belleza a nivel mundial. Creado desde cero con Next.js, React y Tailwind CSS.",
     link: "https://wapizima.com/",
@@ -32,6 +35,7 @@ const PROJECTS = [
   },
   {
     title: "Analisis de Riesgos",
+    important: true,
     description:
       "Sistema para el analisis de riesgos dentro de instituciones gubernamentables. Creada desde cero con React, Tailwind CSS, PHP 8 y PostgreSQL",
     link: "https://miigecem.edomex.gob.mx/cuestionario/",
@@ -42,6 +46,7 @@ const PROJECTS = [
   },
   {
     title: "Wapizima OS",
+    important: true,
     description:
       "Plataforma de cursos de belleza en línea. Creada desde cero con Laravel 8, Livewire, Tailwind CSS Y MySQL",
     link: "https://wapizima.com.mx/",
@@ -62,7 +67,11 @@ const PROJECTS = [
     <CodeIcon width="50" height="50" /> Proyectos
   </h3>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-16 gap-y-20">
-    {PROJECTS.map((project) => <Card {...project} />)}
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    {PROJECTS.slice(0, 2).map((project) => <Card {...project} />)}
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-5 mt-5">
+    {PROJECTS.slice(2).map((project) => <Card {...project} />)}
   </div>
 </section>

@@ -33,7 +33,7 @@
     <script is:inline>
       const dock = document.querySelectorAll(".dock");
       dock.forEach((dock) => {
-        document.addEventListener("scroll", (_) => {
+        document.addEventListener("scroll", () => {
           if (window.scrollY < 100) {
             dock.classList.remove("opacity-100");
             dock.classList.remove("opacity-25");
