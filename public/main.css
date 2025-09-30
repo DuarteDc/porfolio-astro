@@ -1,23 +1,8 @@
-body {
-  cursor: url('./imgs/cursor.webp') 14 0, default;
-}
-
 @font-face {
   font-family: 'Poppins';
   src: url('./fonts/Poppins-ExtraBold.woff2');
   font-weight: 700;
   font-style: normal;
-}
-
-.card-border {
-  box-shadow: -6px 0 0 0 black,
-    6px 0 0 0 black,
-    0 -6px 0 0 black,
-    0 6px 0 0 black;
-}
-
-.pointer {
-  cursor: url('./imgs/cursor-pointer.webp') 14 0, pointer;
 }
 
 .pseudo-boder::after,

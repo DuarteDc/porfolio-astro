@@ -3,20 +3,18 @@ import Card from "./Card.astro";
 
 const PROJECTS = [
   {
-    title: "Nomina",
-    important: true,
+    title: "Payroll",
     description:
-      "Desarrollo y mantenimiento de sistema de nómina implementando React, PHP, Docker, Github Actions y CI/CD",
+      "Maintenance and enhancement of the payroll system using React.js and PHP with MySQL. Implemented automated deployments with GitHub Actions and Docker, applying semantic versioning on container images to ensure control and traceability of each release.",
 
     image: "/imgs/projects/nomina.png",
     company: "FGJEM",
     time: "2024",
   },
   {
-    title: "Predenuncia",
-    important: true,
+    title: "Pre-Complaint",
     description:
-      "Desarrollo de aplicación para el manejo y administración de denuncias NextJs, Docker, Github Actions, Nginx Proxy y CI/CD",
+      "Development of an online pre-complaint system using Next.js (TypeScript), MySQL, and Prisma ORM. Applied Docker and CI/CD pipelines for continuous integration and deployment. Integrated automated workflows with GitHub Actions and Nginx as a reverse proxy.",
     link: "https://fgjem.edomex.gob.mx/pre-denuncia-en-linea",
     image: "/imgs/projects/predenuncia.png",
     company: "FGJEM",
@@ -24,19 +22,17 @@ const PROJECTS = [
   },
   {
     title: "Wapizima Ecommerce",
-    important: true,
     description:
-      "Ecommerce de productos de belleza a nivel mundial. Creado desde cero con Next.js, React y Tailwind CSS.",
+      "Global e-commerce for beauty products built from scratch with Next.js, Tailwind CSS, and Redux for state management. Applied clean code practices and scalable architecture for maintainability and performance.",
     link: "https://wapizima.com/",
     image: "/imgs/projects/ecommerce.webp",
     company: "Digital Pineapple",
     time: "2022 - 2023",
   },
   {
-    title: "Analisis de Riesgos",
-    important: true,
+    title: "Risk Analysis",
     description:
-      "Sistema para el analisis de riesgos dentro de instituciones gubernamentables. Creada desde cero con React, Tailwind CSS, PHP 8 y PostgreSQL",
+      "Risk assessment system for government institutions. Designed with a REST API in PHP using JWT authentication, PDF/Excel report generation, and hexagonal architecture for clean separation of business logic and infrastructure. The frontend was built with React, TypeScript, Tailwind CSS, and NextUI.",
     link: "https://miigecem.edomex.gob.mx/cuestionario/",
     github: "https://github.com/DuarteDc/FDRPSE",
     image: "/imgs/projects/cuestionario.webp",
@@ -45,9 +41,8 @@ const PROJECTS = [
   },
   {
     title: "Wapizima OS",
-    important: true,
     description:
-      "Plataforma de cursos de belleza en línea. Creada desde cero con Laravel 8, Livewire, Tailwind CSS Y MySQL",
+      "Online platform for beauty courses, built from scratch with Laravel 8, Livewire, Tailwind CSS, and MySQL. Implemented interactive user interfaces and scalable backend services for course management and student interaction.",
     link: "https://wapizima.com.mx/",
     image: "/imgs/projects/wos.webp",
     company: "Digital Pineapple",
@@ -58,7 +53,7 @@ const PROJECTS = [
 
 <section
   id="projects"
-  class="w-full lg:py-20 text-white [&>article]:transition-all [&>article]:duration-500 flex flex-col overflow-hidden px-5"
+  class="w-full lg:py-20 text-white [&>article]:transition-all [&>article]:duration-500 flex flex-col overflow-hidden px-5 relative before:w-9/12 before:left-1/2 before:transform before:-translate-x-1/2 before:h-[35rem] before:bg-purple-500/40 before:absolute before:-z-10 before:top-56 before:xl before:rounded-bl-full before:rounded-br-full before:blur-[6rem]"
 >
   <h3
     class="text-center bg-gradient-to-t from-purple-950 to-purple-100 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold uppercase font-[Poppins]"
@@ -66,11 +61,11 @@ const PROJECTS = [
     PROJECTS
   </h3>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
     {PROJECTS.slice(0, 2).map((project) => <Card {...project} />)}
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-7 mt-7">
+  <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-5 mt-5">
     {PROJECTS.slice(2).map((project) => <Card {...project} />)}
   </div>
 </section>

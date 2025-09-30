@@ -7,13 +7,16 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
   id="about-me"
   class="min-h-[calc(100vh-10rem)] w-full flex flex-col lg:flex-row items-center justify-center text-white gap-4 lg:gap-10"
 >
+  <span
+    class="w-[70rem] h-[50rem] rounded-full bg-purple-500/15 blur-[10rem] absolute left-20 -z-10"
+  ></span>
   <div
-    class="w-[250px] h-[250px] xl:w-[400px] xl:h-[400px] rounded-full overflow-hidden main-image"
+    class="w-[250px] h-[250px] xl:w-[400px] xl:h-[400px] rounded-full overflow-hidden main-image relative"
   >
     <img
       src="/imgs/me-pixel-art-no-bg.png"
       alt="cursor pointer"
-      class="w-full h-full object-cover mix-blend-lighten shadow-2xl opacity-90"
+      class="w-full h-full object-cover mix-blend-lighten shadow-2xl"
     />
   </div>
   <div class="w-full xl:w-6/12">
@@ -38,7 +41,7 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
       approach. I transform ideas into functional products, automate processes,
       and develop scalable and efficient systems.
     </span>
-    <div class="mt-5 flex items-center gap-3">
+    <div class="mt-5 flex items-center gap-3 relative z-20">
       <a
         href="https://mx.linkedin.com/in/duartedc"
         type="button"

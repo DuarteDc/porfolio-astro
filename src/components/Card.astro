@@ -19,7 +19,7 @@ const { title, description, link, github, image, company, time }: Props =
 <article
   data-company={company}
   data-time={time}
-  class="[&>figure>img]:hover:scale-105 [&>figure>img]:transition-all [&>figure>img]:duration-500 hover:shadow-sm hover:shadow-purple-600/20 rounded-xl overflow-hidden border min-h-[35rem] bg-black/30 border-gray-800 hover:border-gray-700 transition-all duration-500"
+  class="[&>figure>img]:hover:scale-105 [&>figure>img]:transition-all [&>figure>img]:duration-500 hover:shadow hover:shadow-gray-200 rounded-xl overflow-hidden border min-h-[35rem] bg-black/30 backdrop-blur-3xl border-gray-800 hover:border-gray-700 transition-all duration-500"
 >
   <figure
     class="bg-black h-[20rem] max-h-[20rem] overflow-hidden w-full aspect-square card-project-mask"
@@ -34,8 +34,8 @@ const { title, description, link, github, image, company, time }: Props =
     />
   </figure>
   <div class="p-6">
-    <h4 class="truncate my-4 text-4xl">{title}</h4>
-    <p class="text-xs">
+    <h4 class="truncate my-4 text-4xl uppercase font-extrabold">{title}</h4>
+    <p class="text-xs text-gray-400">
       {description}
     </p>
   </div>
