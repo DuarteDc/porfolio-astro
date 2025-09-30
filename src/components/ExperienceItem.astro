@@ -11,7 +11,7 @@ const { title, description, year }: Props = Astro.props;
 ---
 
 <article
-  class="hover:scale-[1.005] relative paragraph p-5 hover:bg-black/30 hover:backdrop-blur-2xl transition-all duration-500 rounded-2xl hover:transition-all hover:duration-500 [&>svg]:absolute
+  class="hover:scale-[1.005] relative paragraph p-5 hover:bg-gray-500/5 backdrop-blur-3xl transition-all duration-500 rounded-2xl hover:transition-all hover:duration-500 [&>svg]:absolute
   [&>svg]:top-4 [&>svg]:right-4 [&>svg]:size-5 [&>svg]:text-purple-500 [&>svg]:transition-all [&>svg]:duration-500 [&>svg]:rotate-45 [&>svg]:hover:right-2 [&>svg]:hover:top-2"
 >
   <ArrowUpIcon />
@@ -21,7 +21,7 @@ const { title, description, year }: Props = Astro.props;
   <div
     class="normal-text mb-4 font-bold text-gray-300 gap-y-4 w-9/12 flex flex-col gap-5"
   >
-    <p>
+    <p class="text-xs md:text-base">
       {description}
     </p>
     <p>{year}</p>
