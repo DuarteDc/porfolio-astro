@@ -134,3 +134,24 @@ html {
   mask-size: cover;
   -webkit-mask-size: cover;
 }
+
+.card-project-mask {
+  position: relative;
+  overflow: hidden;
+  /* asegura que el overlay no se salga */
+}
+
+.card-project-mask::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.762) 0%,
+      /* más oscuro arriba */
+      rgba(0, 0, 0, 0.15) 40%,
+      /* se va aclarando */
+      rgba(0, 0, 0, 0) 100%
+      /* totalmente transparente abajo */
+    );
+  pointer-events: none;
+}

@@ -1,6 +1,6 @@
 ---
-import CodeIcon from "./icons/CodeIcon.astro";
 import ExternalLinkIcon from "./icons/ExternalLinkIcon.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
 
 interface Props {
   title: string;
@@ -19,13 +19,15 @@ const { title, description, link, github, image, company, time }: Props =
 <article
   data-company={company}
   data-time={time}
-  class="rounded-xl overflow-hidden border min-h-[40rem] bg-black border-gray-600"
+  class="[&>figure>img]:hover:scale-105 [&>figure>img]:transition-all [&>figure>img]:duration-500 hover:shadow-sm hover:shadow-purple-600/20 rounded-xl overflow-hidden border min-h-[35rem] bg-black/30 border-gray-800 hover:border-gray-700 transition-all duration-500"
 >
-  <figure class="bg-black h-[25rem] w-full aspect-square">
+  <figure
+    class="bg-black h-[20rem] max-h-[20rem] overflow-hidden w-full aspect-square card-project-mask"
+  >
     <img
       src={image}
       alt="wapizima"
-      class="h-full w-full object-fill bg-no-repeat card-border"
+      class="h-full w-full object-cover bg-no-repeat"
       loading="lazy"
       width="300"
       height="300"
@@ -33,41 +35,36 @@ const { title, description, link, github, image, company, time }: Props =
   </figure>
   <div class="p-6">
     <h4 class="truncate my-4 text-4xl">{title}</h4>
-    <p class="">
+    <p class="text-xs">
       {description}
     </p>
   </div>
   <footer
-    class="flex justify-start items-center [&>*:first-child]:mr-8 text-center mt-2 overflow-hidden pb-2 pl-2"
+    class="flex justify-start items-center [&>*:first-child]:mr-8 text-center mt-2 overflow-hidden p-5"
   >
     {
       link && (
         <a
-          href={link}
+          href="https://mx.linkedin.com/in/duartedc"
+          type="button"
           target="_blank"
-          class="block py-2 px-6 card-border mt-2 relative pointer
-		bg-orange-600 hover:bg-orange-500
-		after:absolute after:bottom-0 after:h-1 after:w-full after:bg-orange-800 after:left-0
-		before:absolute before:bottom-0 before:h-full before:w-1 before:bg-orange-800 before:right-0
-		hover:after:h-[6px] hover:before:w-[6px] transition-all duration-75 after:transition-all after:duration-75
-		before:transition-all before:duration-75 w-auto"
+          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
         >
           <ExternalLinkIcon />
+          Show
         </a>
       )
     }
     {
       github && (
         <a
-          href={github}
+          href="https://mx.linkedin.com/in/duartedc"
+          type="button"
           target="_blank"
-          class="block py-2 px-6 card-border mt-2 relative pointer bg-blue-600 hover:bg-blue-500
-			after:absolute after:bottom-0 after:h-1 after:w-full after:bg-blue-800 after:left-0
-			before:absolute before:bottom-0 before:h-full before:w-1 before:bg-blue-800 before:right-0
-			hover:after:h-[6px] hover:before:w-[6px] transition-all duration-75 after:transition-all after:duration-75
-			before:transition-all before:duration-75 w-auto"
+          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
         >
-          <CodeIcon />
+          <GithubIcon />
+          Code
         </a>
       )
     }

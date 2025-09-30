@@ -1,6 +1,5 @@
 ---
 import Card from "./Card.astro";
-import CodeIcon from "./icons/CodeIcon.astro";
 
 const PROJECTS = [
   {
@@ -59,19 +58,19 @@ const PROJECTS = [
 
 <section
   id="projects"
-  class="w-full lg:py-20 text-white [&>article]:transition-all [&>article]:duration-500"
+  class="w-full lg:py-20 text-white [&>article]:transition-all [&>article]:duration-500 flex flex-col overflow-hidden px-5"
 >
   <h3
-    class="text-5xl lg:tracking-widest text-white mb-24 flex justify-center items-center [&>svg]:mr-2 [&>svg]:text-yellow-400"
+    class="text-center bg-gradient-to-t from-purple-950 to-purple-100 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold uppercase font-[Poppins]"
   >
-    <CodeIcon width="50" height="50" /> Proyectos
+    PROJECTS
   </h3>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
     {PROJECTS.slice(0, 2).map((project) => <Card {...project} />)}
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-5 mt-5">
+  <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-7 mt-7">
     {PROJECTS.slice(2).map((project) => <Card {...project} />)}
   </div>
 </section>
