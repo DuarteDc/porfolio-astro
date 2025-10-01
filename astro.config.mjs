@@ -5,5 +5,8 @@ import partytown from '@astrojs/partytown'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react({ include: ['**/react/*'] }), tailwind(), partytown()]
+  integrations: [react({ include: ['**/react/*'] }), tailwind(), partytown()],
+  markdown: {
+    syntaxHighlight: 'prism'
+  }
 })

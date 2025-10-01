@@ -1,0 +1,49 @@
+---
+const {
+  code = "",
+  filename = "example.js",
+  language = "javascript",
+} = Astro.props;
+---
+
+<div class="code-box">
+  <div class="code-header">
+    📄 {filename}
+  </div>
+  <div class="code-body">
+    <pre><code class={`language-${language}`}>{code}</code></pre>
+  </div>
+</div>
+
+<style>
+  .code-box {
+    background: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-family: monospace;
+    overflow: hidden;
+    margin: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .code-header {
+    background: #2a2a2a;
+    color: #ddd;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-bottom: 1px solid #444;
+    font-size: 0.9rem;
+  }
+
+  .code-body {
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  pre {
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+</style>
