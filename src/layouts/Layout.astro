@@ -39,7 +39,38 @@ const { title } = Astro.props;
   <body
     class="overflow-x-hidden h-screen flex flex-col items-center w-full relative bg-no-repeat min-h-svh bg-gradient-to-b from-neutral-800 via-neutral-900 to-black bg-fixed max-w-[2000px] mx-auto"
   >
-    <slot />
-    <Navbar />
+    <main
+      class="w-full py-20 px-10 lg:px-32 items-center font-bold min-h-screen relative"
+    >
+      <slot />
+      <Navbar />
+    </main>
   </body>
+
+  <script is:inline>
+    const mouseElement = document.createElement("div");
+    mouseElement.classList.add(
+      "w-[50rem]",
+      "h-[50rem]",
+      "rounded-full",
+      "blur-[10rem]",
+      "bg-purple-500/15",
+      "fixed",
+      "-z-10",
+      "flex",
+      "justify-center",
+      "items-center",
+      "transition-all",
+      "duration-75",
+      "ease-in-out"
+    );
+    document.querySelector("main")?.appendChild(mouseElement);
+
+    document.addEventListener("mousemove", (event) => {
+      if (!mouseElement) return;
+
+      mouseElement.style.left = event.clientX - 300 + "px";
+      mouseElement.style.top = event.clientY - 300 + "px";
+    });
+  </script>
 </html>

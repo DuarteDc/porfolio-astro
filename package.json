@@ -12,15 +12,16 @@
   "dependencies": {
     "@astrojs/check": "^0.5.4",
     "@astrojs/partytown": "^2.0.4",
-    "@astrojs/react": "^3.0.10",
+    "@astrojs/react": "^4.4.0",
     "@astrojs/tailwind": "^5.1.0",
     "@splinetool/runtime": "^1.10.14",
-    "@types/react": "^18.2.57",
-    "@types/react-dom": "^18.2.19",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
     "astro": "^4.4.0",
     "gsap": "^3.13.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "stepper-ui": "^1.2.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
