@@ -1,5 +1,6 @@
 ---
 import Card from "./Card.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
 
 const PROJECTS = [
   {
@@ -68,5 +69,53 @@ const PROJECTS = [
 
   <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-5 mt-5">
     {PROJECTS.slice(2).map((project) => <Card {...project} />)}
+  </div>
+
+  <div class="mt-10 flex flex-col gap-5 mb-56">
+    <hr
+      class="h-[1px] w-full bg-gradient-to-l from-purple-500 to-purple-900 border-none shadow-3xl shadow-purple-500/20"
+    />
+    <h4
+      class="text-center bg-gradient-to-t from-purple-950 to-purple-100 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold uppercase font-[Poppins]"
+    >
+      PERSONAL PROJECTS
+    </h4>
+    <div
+      class="w-full rounded-xl bg-white/5 p-5 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-500"
+    >
+      <div class="flex items-center gap-3">
+        <ReactIcon />
+        <p
+          class="text-2xl bg-gradient-to-t from-purple-600 to-purple-100 inline-block text-transparent py-2 bg-clip-text"
+        >
+          Stepper UI
+        </p>
+      </div>
+      <p>
+        Stepper-ui is a React component library that provides a customizable and
+        easy-to-use Stepper, ideal for multi-step forms or workflows. Built with
+        React, TypeScript, and designed to integrate with TailwindCSS.
+      </p>
+      <div class="w-full flex gap-5 mt-5">
+        <a
+          href="https://www.npmjs.com/package/stepper-ui"
+          target="_blank"
+          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
+          rel="noopener noreferrer">npm</a
+        >
+        <a
+          href="https://github.com/DuarteDc/stepper-ui-library"
+          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
+          target="_blank"
+          rel="noopener noreferrer">GitHub</a
+        >
+        <a
+          href="https://www.npmjs.com/package/stepper-ui"
+          target="_blank"
+          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
+          rel="noopener noreferrer">Demo</a
+        >
+      </div>
+    </div>
   </div>
 </section>
