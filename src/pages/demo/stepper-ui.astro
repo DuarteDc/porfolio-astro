@@ -49,15 +49,15 @@ const SecondFormString = fs.readFileSync(
     </ul>
   </section>
 
-  <section class="grid grid-cols-2 gap-4 mb-10">
-    <div>
+  <section class="lg:grid lg:grid-cols-2 lg:gap-4 lg:mb-10">
+    <div class="w-full overflow-x-auto">
       <CodeBlock
         filename="first-form.tsx"
         language="tsx"
         code={FirstFormString}
       />
     </div>
-    <div>
+    <div class="w-full overflow-x-auto">
       <CodeBlock
         filename="second-form.tsx"
         language="tsx"
