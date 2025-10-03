@@ -3,10 +3,11 @@ import { FirstForm } from './stepper/first-form'
 import { SecondForm } from './stepper/second-form'
 
 const StepIcon = ({
-  step,
+  label,
   isActive,
   isCompleted
 }: {
+  label: string
   step: number
   isActive: boolean
   isCompleted: boolean
@@ -17,7 +18,8 @@ const StepIcon = ({
         ${isActive ? 'shadow-purple-500/30 shadow-xl' : ''}  
         ${isCompleted ? 'bg-purple-600' : ''}`}
     >
-      {isCompleted ? '✓' : step + 1} {` Step`}
+      {isCompleted && '✓'}
+      {label && <span className='ml-2'>{label}</span>}
     </div>
   )
 }
@@ -57,8 +59,13 @@ export const StepperUI = () => {
   return (
     <Stepper
       wrapperClassName='w-full mx-auto bg-white/5 rounded-lg shadow-lg p-5 shadow-md shadow-purple-500/20 text-white'
-      renderStepIcon={(step, isActive, isCompleted) => (
-        <StepIcon step={step} isActive={isActive} isCompleted={isCompleted} />
+      renderStepIcon={(label, step, isActive, isCompleted) => (
+        <StepIcon
+          label={label}
+          step={step}
+          isActive={isActive}
+          isCompleted={isCompleted}
+        />
       )}
       steps={steps}
       renderButtons={({ backStep, nextStep }) => (

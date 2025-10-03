@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react'
 
-export function usePersistedState<T>(key: string, defaultValue: T) {
-  const [state, setState] = useState<T>(defaultValue);
+export function usePersistedState<T> (key: string, defaultValue: T) {
+  const [state, setState] = useState<T>(defaultValue)
 
   useEffect(() => {
-    const saved = localStorage.getItem(key);
+    const saved = localStorage.getItem(key)
     if (saved) {
       try {
-        setState(JSON.parse(saved));
+        setState(JSON.parse(saved))
       } catch {
-        setState(defaultValue);
+        setState(defaultValue)
       }
     }
-  }, [key, defaultValue]);
+  }, [key])
 
   const updateState = (newValue: T) => {
-    setState(newValue);
-    localStorage.setItem(key, JSON.stringify(newValue));
-  };
+    setState(newValue)
+    localStorage.setItem(key, JSON.stringify(newValue))
+  }
 
-  return [state, updateState] as const;
+  return [state, updateState] as const
 }

@@ -1,11 +1,11 @@
 import { forwardRef, useImperativeHandle, type ForwardedRef } from 'react'
-import type { ValidateStep } from 'stepper-ui'
+import type { StepperContextProps, ValidateStep } from 'stepper-ui'
 import { FormField } from './form-field'
 import { usePersistedState } from '../../../hooks/use-persisted-state'
 import type { SecondFormData, SecondFormErrors } from './types'
 
-export const SecondForm = forwardRef<ValidateStep>(
-  (_, ref: ForwardedRef<ValidateStep>) => {
+export const SecondForm = forwardRef<ValidateStep, StepperContextProps>(
+  ({ goToInitialStep }, ref: ForwardedRef<ValidateStep>) => {
     const [formData, setFormData] = usePersistedState<SecondFormData>(
       'userDataPassword',
       { password: '', confirmPassword: '' }
@@ -38,6 +38,8 @@ export const SecondForm = forwardRef<ValidateStep>(
               password: formData.password
             })}`
           )
+          localStorage.clear()
+          goToInitialStep()
           return true
         }
         return false
