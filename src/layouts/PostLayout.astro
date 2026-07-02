@@ -1,0 +1,132 @@
+---
+import Layout from "./Layout.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import CalendarIcon from "../components/icons/CalendarIcon.astro";
+import ArrowLeftIcon from "../components/icons/ArrowLeftIcon.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  publishDate: string;
+  readingTime?: string;
+  tags?: string[];
+}
+
+const { title, description, publishDate, readingTime, tags = [] } = Astro.props;
+
+const formattedDate = new Date(publishDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<Layout title={`${title} | Eduardo Duarte`} description={description}>
+  <article class="max-w-3xl mx-auto px-6 py-16">
+    <header class="mb-12">
+      <a
+        href="/#open-source"
+        class="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors mb-8"
+      >
+        <ArrowLeftIcon width="16" height="16" />
+        Back to posts
+      </a>
+
+      {tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag) => (
+            <span class="px-3 py-1 text-xs font-medium text-zinc-400 border border-zinc-700 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <h1 class="text-3xl md:text-4xl font-bold text-zinc-100 mb-6 leading-tight">
+        {title}
+      </h1>
+
+      <div class="flex flex-wrap items-center gap-6 text-sm text-zinc-500">
+        <div class="flex items-center gap-2">
+          <CalendarIcon width="16" height="16" />
+          <time datetime={publishDate}>{formattedDate}</time>
+        </div>
+        {readingTime && (
+          <span>{readingTime} min read</span>
+        )}
+      </div>
+    </header>
+
+    <div class="prose prose-invert prose-zinc max-w-none">
+      <slot />
+    </div>
+
+    <footer class="mt-16 pt-8 border-t border-zinc-800">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-sm text-zinc-500">Written by</p>
+          <p class="font-medium text-zinc-300">Eduardo Duarte Clemente</p>
+        </div>
+        <a
+          href="https://github.com/DuarteDc"
+          target="_blank"
+          class="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
+        >
+          <GithubIcon width="18" height="18" />
+          View GitHub
+        </a>
+      </div>
+    </footer>
+  </article>
+</Layout>
+
+<style is:global>
+  .prose {
+    @apply text-zinc-300 leading-relaxed;
+  }
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    @apply text-zinc-100 font-bold mt-12 mb-4;
+  }
+  .prose h1 { @apply text-3xl; }
+  .prose h2 { @apply text-2xl; }
+  .prose h3 { @apply text-xl; }
+  .prose p {
+    @apply mb-6;
+  }
+  .prose a {
+    @apply text-zinc-400 underline underline-offset-4 hover:text-zinc-200 transition-colors;
+  }
+  .prose ul, .prose ol {
+    @apply mb-6 pl-6;
+  }
+  .prose ul {
+    @apply list-disc;
+  }
+  .prose ol {
+    @apply list-decimal;
+  }
+  .prose li {
+    @apply mb-2;
+  }
+  .prose code {
+    @apply bg-zinc-900 px-2 py-1 rounded text-zinc-300 text-sm font-mono;
+  }
+  .prose pre {
+    @apply bg-zinc-900 border border-zinc-800 rounded-lg p-6 my-6 overflow-x-auto;
+  }
+  .prose pre code {
+    @apply bg-transparent p-0 text-zinc-300;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-zinc-700 pl-6 italic text-zinc-400 my-6;
+  }
+  .prose img {
+    @apply rounded-lg border border-zinc-800 my-8;
+  }
+  .prose hr {
+    @apply border-zinc-800 my-12;
+  }
+  .prose strong {
+    @apply text-zinc-100 font-semibold;
+  }
+</style>
