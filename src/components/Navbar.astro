@@ -2,21 +2,24 @@
 import GithubIcon from "./icons/GithubIcon.astro";
 import LinkedinIcon from "./icons/LinkedinIcon.astro";
 
+const currentPath = Astro.url.pathname;
+const isDemoPage = currentPath.startsWith("/demo");
+
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#impact", label: "Impact" },
-  { href: "#case-studies", label: "Case Studies" },
-  { href: "#architecture", label: "Architecture" },
-  { href: "#experience", label: "Experience" },
-  { href: "#open-source", label: "Open Source" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#impact", label: "Impact" },
+  { href: "/#case-studies", label: "Case Studies" },
+  { href: "/#architecture", label: "Architecture" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#open-source", label: "Open Source" },
+  { href: "/#contact", label: "Contact" },
 ];
 ---
 
 <header class="sticky top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-lg">
   <nav class="max-w-6xl mx-auto px-6 py-4">
     <div class="flex items-center justify-between">
-      <a href="#" class="text-lg font-semibold text-zinc-100 tracking-tight">
+      <a href="/" class="text-lg font-semibold text-zinc-100 tracking-tight hover:text-zinc-200 transition-colors">
         Eduardo<span class="text-zinc-500">.</span>
       </a>
       
@@ -32,6 +35,14 @@ const navLinks = [
       </div>
       
       <div class="flex items-center gap-4">
+        {isDemoPage && (
+          <a
+            href="/"
+            class="md:hidden text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+          >
+            Back to Portfolio
+          </a>
+        )}
         <a
           href="https://github.com/DuarteDc"
           target="_blank"
