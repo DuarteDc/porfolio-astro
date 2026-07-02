@@ -4,114 +4,115 @@ import ReactIcon from "./icons/ReactIcon.astro";
 
 const PROJECTS = [
   {
-    title: "Payroll",
+    title: "Evidence Warehouse System",
     description:
-      "Maintenance and enhancement of the payroll system using React.js and PHP with MySQL. Implemented automated deployments with GitHub Actions and Docker, applying semantic versioning on container images to ensure control and traceability of each release.",
-
+      "Designed and implemented a digital evidence management system using microservices architecture. Node.js + WebSockets for real-time communication, React frontend, Laravel + TypeScript backend, and LibreOffice integration for document collaboration. Serving 50+ government agencies.",
     image: "/imgs/projects/nomina.png",
     company: "FGJEM",
     time: "2024",
   },
   {
-    title: "Pre-Complaint",
+    title: "Pre-Denuncia Online",
     description:
-      "Development of an online pre-complaint system using Next.js (TypeScript), MySQL, and Prisma ORM. Applied Docker and CI/CD pipelines for continuous integration and deployment. Integrated automated workflows with GitHub Actions and Nginx as a reverse proxy.",
+      "Built an online pre-complaint reporting system with Next.js (TypeScript), MySQL, and Prisma ORM. Implemented Docker containers and CI/CD pipelines with GitHub Actions for automated deployments and testing.",
     link: "https://fgjem.edomex.gob.mx/pre-denuncia-en-linea",
     image: "/imgs/projects/predenuncia.png",
     company: "FGJEM",
     time: "2024",
   },
   {
-    title: "Wapizima Ecommerce",
+    title: "Payroll System",
     description:
-      "Global e-commerce for beauty products built from scratch with Next.js, Tailwind CSS, and Redux for state management. Applied clean code practices and scalable architecture for maintainability and performance.",
-    link: "https://wapizima.com/",
+      "Maintained and enhanced the payroll system processing 1M+ stamps daily. React.js + PHP (Laravel) with MySQL. Implemented automated GitHub Actions deployments and Docker with semantic versioning for controlled releases.",
     image: "/imgs/projects/ecommerce.webp",
-    company: "Digital Pineapple",
-    time: "2022 - 2023",
+    company: "FGJEM",
+    time: "2024",
   },
   {
-    title: "Risk Analysis",
+    title: "Risk Questionnaire System",
     description:
-      "Risk assessment system for government institutions. Designed with a REST API in PHP using JWT authentication, PDF/Excel report generation, and hexagonal architecture for clean separation of business logic and infrastructure. The frontend was built with React, TypeScript, Tailwind CSS, and NextUI.",
+      "Designed REST API with hexagonal architecture in PHP, JWT authentication, PDF/Excel report generation. React + TypeScript + Tailwind CSS frontend. Reduced retrieval time by 60% through optimized queries.",
     link: "https://miigecem.edomex.gob.mx/cuestionario/",
     github: "https://github.com/DuarteDc/FDRPSE",
     image: "/imgs/projects/cuestionario.webp",
     company: "IGECEM",
-    time: "2024",
+    time: "2023",
   },
   {
-    title: "Wapizima OS",
+    title: "E-Commerce Platform",
     description:
-      "Online platform for beauty courses, built from scratch with Laravel 8, Livewire, Tailwind CSS, and MySQL. Implemented interactive user interfaces and scalable backend services for course management and student interaction.",
-    link: "https://wapizima.com.mx/",
+      "Built scalable e-commerce for beauty products with Next.js, Tailwind CSS, and Redux. Clean code practices and scalable architecture for thousands of users. Integrated payment gateways and real-time inventory.",
+    link: "https://wapizima.com/",
     image: "/imgs/projects/wos.webp",
     company: "Digital Pineapple",
-    time: "2021 - 2022",
-  },
+    time: "2022",
+  }
+];
+
+const personalProjects = [
+  {
+    name: "stepper-ui",
+    description: "React component library for multi-step forms and workflows. Published to npm with 2.5k+ weekly downloads.",
+    npm: "https://www.npmjs.com/package/stepper-ui",
+    github: "https://github.com/DuarteDc/stepper-ui-library",
+    demo: "/demo/stepper-ui"
+  }
 ];
 ---
 
 <section
   id="projects"
-  class="w-full lg:py-20 text-white [&>article]:transition-all [&>article]:duration-500 flex flex-col overflow-hidden lg:px-5 relative before:w-2/12 before:md:w-9/12 before:left-1/2 before:transform before:-translate-x-1/2
-  before:h-[20rem] before:lg:h-[35rem] before:bg-purple-500/40 before:absolute before:-z-10 before:top-56 before:xl before:rounded-bl-full before:rounded-br-full before:blur-[6rem]"
+  class="w-full lg:py-20 text-white overflow-hidden relative"
 >
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] lg:w-[60%] h-[30rem] lg:h-[40rem] bg-purple-500/20 rounded-bl-full rounded-br-full blur-[8rem] -z-10"></div>
+  
   <h3
-    class="text-center bg-gradient-to-t from-purple-950 to-purple-100 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold uppercase font-[Poppins]"
+    class="text-center bg-gradient-to-r from-purple-400 to-purple-200 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold uppercase font-[Poppins] w-full"
   >
-    PROJECTS
+    Featured Projects
   </h3>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-    {PROJECTS.slice(0, 2).map((project) => <Card {...project} />)}
+  <p class="text-center text-gray-400 mt-4 mb-12 max-w-2xl mx-auto">
+    Backend systems and architectural solutions designed for scale, reliability, and real-world impact
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {PROJECTS.map((project) => <Card {...project} />)}
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-5 mt-5">
-    {PROJECTS.slice(2).map((project) => <Card {...project} />)}
-  </div>
-
-  <div class="mt-10 flex flex-col gap-5 mb-56">
-    <hr
-      class="h-[1px] w-full bg-gradient-to-l from-purple-500 to-purple-900 border-none shadow-3xl shadow-purple-500/20"
-    />
+  <div class="mt-16 flex flex-col gap-5">
+    <hr class="h-[1px] w-full border-gray-800" />
     <h4
-      class="text-center bg-gradient-to-t from-purple-950 to-purple-100 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold uppercase font-[Poppins]"
+      class="text-center bg-gradient-to-r from-purple-400 to-purple-200 inline-block text-transparent py-3 bg-clip-text text-2xl lg:text-3xl font-bold uppercase font-[Poppins] w-full"
     >
-      PERSONAL PROJECTS
+      Open Source
     </h4>
     <div
-      class="w-full rounded-xl bg-white/5 p-5 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-500"
+      class="max-w-2xl mx-auto w-full rounded-xl bg-gray-900/50 border border-gray-800 hover:border-purple-500/30 p-6 transition-all duration-300"
     >
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3 mb-4">
         <ReactIcon />
-        <p
-          class="text-2xl bg-gradient-to-t from-purple-600 to-purple-100 inline-block text-transparent py-2 bg-clip-text"
-        >
-          Stepper UI
-        </p>
+        <p class="text-xl font-semibold text-purple-300">stepper-ui</p>
       </div>
-      <p>
-        Stepper-ui is a React component library that provides a customizable and
-        easy-to-use Stepper, ideal for multi-step forms or workflows. Built with
-        React, TypeScript, and designed to integrate with TailwindCSS.
+      <p class="text-gray-400 text-sm leading-relaxed">
+        {personalProjects[0].description}
       </p>
-      <div class="w-full flex gap-5 mt-5">
+      <div class="flex flex-wrap gap-4 mt-5">
         <a
-          href="https://www.npmjs.com/package/stepper-ui"
+          href={personalProjects[0].npm}
           target="_blank"
-          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
+          class="text-sm px-4 py-2 rounded-md border border-gray-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
           rel="noopener noreferrer">npm</a
         >
         <a
-          href="https://github.com/DuarteDc/stepper-ui-library"
-          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
+          href={personalProjects[0].github}
           target="_blank"
+          class="text-sm px-4 py-2 rounded-md border border-gray-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
           rel="noopener noreferrer">GitHub</a
         >
         <a
-          href="/demo/stepper-ui"
-          class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
+          href={personalProjects[0].demo}
+          class="text-sm px-4 py-2 rounded-md border border-gray-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300"
           rel="noopener noreferrer">Demo</a
         >
       </div>

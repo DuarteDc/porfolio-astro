@@ -1,0 +1,45 @@
+---
+const impact = [
+  {
+    metric: "1M+",
+    label: "Daily Transactions",
+    description: "Payroll stamps and evidence records processed through systems I architected"
+  },
+  {
+    metric: "4+",
+    label: "Years Experience",
+    description: "Building distributed systems and leading technical teams in production"
+  },
+  {
+    metric: "50+",
+    label: "Agencies Served",
+    description: "Government agencies relying on systems I designed and maintain"
+  },
+  {
+    metric: "60%",
+    label: "Performance Gain",
+    description: "Reduced evidence retrieval time through optimized database architecture"
+  }
+];
+---
+
+<section id="impact" class="py-24 border-b border-zinc-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-4">Track Record</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-zinc-100">
+        Impact at Scale
+      </h2>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {impact.map((item) => (
+        <div class="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:border-zinc-700 transition-colors">
+          <p class="text-4xl md:text-5xl font-bold text-zinc-100 mb-2">{item.metric}</p>
+          <p class="text-sm font-medium text-zinc-300 mb-2">{item.label}</p>
+          <p class="text-sm text-zinc-500">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

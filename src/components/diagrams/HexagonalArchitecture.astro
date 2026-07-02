@@ -1,0 +1,72 @@
+---
+---
+
+<div class="w-full overflow-x-auto">
+  <svg viewBox="0 0 500 350" class="w-full min-w-[400px] h-auto">
+    <defs>
+      <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#27272a;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#18181b;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+
+    <rect x="150" y="100" width="200" height="150" rx="8" fill="url(#hexGrad)" stroke="#3f3f46" stroke-width="2"/>
+    <text x="250" y="135" text-anchor="middle" fill="#a1a1aa" font-size="11" font-weight="600" font-family="sans-serif">DOMAIN</text>
+    <text x="250" y="155" text-anchor="middle" fill="#71717a" font-size="9" font-family="sans-serif">Business Logic</text>
+    <text x="250" y="170" text-anchor="middle" fill="#71717a" font-size="9" font-family="sans-serif">Entities & Rules</text>
+    <text x="250" y="230" text-anchor="middle" fill="#a1a1aa" font-size="11" font-weight="600" font-family="sans-serif">APPLICATION</text>
+    <text x="250" y="250" text-anchor="middle" fill="#71717a" font-size="9" font-family="sans-serif">Use Cases & Ports</text>
+
+    <g>
+      <rect x="30" y="120" width="100" height="110" rx="6" fill="#18181b" stroke="#52525b" stroke-width="1.5"/>
+      <text x="80" y="155" text-anchor="middle" fill="#a1a1aa" font-size="10" font-weight="500" font-family="sans-serif">REST API</text>
+      <text x="80" y="175" text-anchor="middle" fill="#71717a" font-size="8" font-family="sans-serif">HTTP Adapter</text>
+      <line x1="130" y1="175" x2="150" y2="175" stroke="#52525b" stroke-width="1.5" marker-end="url(#arrowGray)"/>
+      <defs>
+        <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+          <polygon points="0 0, 8 3, 0 6" fill="#52525b" />
+        </marker>
+      </defs>
+    </g>
+
+    <g>
+      <rect x="370" y="120" width="100" height="110" rx="6" fill="#18181b" stroke="#52525b" stroke-width="1.5"/>
+      <text x="420" y="155" text-anchor="middle" fill="#a1a1aa" font-size="10" font-weight="500" font-family="sans-serif">Database</text>
+      <text x="420" y="175" text-anchor="middle" fill="#71717a" font-size="8" font-family="sans-serif">MySQL Adapter</text>
+      <line x1="370" y1="175" x2="350" y2="175" stroke="#52525b" stroke-width="1.5" marker-start="url(#arrowGrayL)"/>
+      <defs>
+        <marker id="arrowGrayL" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+          <polygon points="8 0, 0 3, 8 6" fill="#52525b" />
+        </marker>
+      </defs>
+    </g>
+
+    <g>
+      <rect x="200" y="20" width="100" height="60" rx="6" fill="#18181b" stroke="#52525b" stroke-width="1.5"/>
+      <text x="250" y="50" text-anchor="middle" fill="#a1a1aa" font-size="10" font-weight="500" font-family="sans-serif">JWT Auth</text>
+      <text x="250" y="65" text-anchor="middle" fill="#71717a" font-size="8" font-family="sans-serif">Security Layer</text>
+      <line x1="280" y1="80" x2="280" y2="100" stroke="#52525b" stroke-width="1" stroke-dasharray="4"/>
+    </g>
+
+    <g>
+      <rect x="200" y="270" width="100" height="60" rx="6" fill="#18181b" stroke="#52525b" stroke-width="1.5"/>
+      <text x="250" y="295" text-anchor="middle" fill="#a1a1aa" font-size="10" font-weight="500" font-family="sans-serif">Reports</text>
+      <text x="250" y="310" text-anchor="middle" fill="#71717a" font-size="8" font-family="sans-serif">PDF/Excel</text>
+      <line x1="280" y1="250" x2="280" y2="270" stroke="#52525b" stroke-width="1" stroke-dasharray="4"/>
+    </g>
+
+    <g>
+      <rect x="30" y="260" width="100" height="50" rx="6" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+      <text x="80" y="285" text-anchor="middle" fill="#71717a" font-size="9" font-family="sans-serif">CLI Tools</text>
+      <line x1="130" y1="285" x2="150" y2="200" stroke="#3f3f46" stroke-width="1" stroke-dasharray="3"/>
+    </g>
+
+    <g>
+      <rect x="370" y="260" width="100" height="50" rx="6" fill="#18181b" stroke="#3f3f46" stroke-width="1"/>
+      <text x="420" y="285" text-anchor="middle" fill="#71717a" font-size="9" font-family="sans-serif">External APIs</text>
+      <line x1="370" y1="285" x2="350" y2="200" stroke="#3f3f46" stroke-width="1" stroke-dasharray="3"/>
+    </g>
+
+    <text x="250" y="340" text-anchor="middle" fill="#52525b" font-size="8" font-family="sans-serif">Hexagonal / Ports & Adapters Pattern</text>
+  </svg>
+</div>

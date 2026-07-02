@@ -1,0 +1,71 @@
+---
+import CaseStudyCard from "./CaseStudyCard.astro";
+
+const caseStudies = [
+  {
+    title: "Digital Evidence Warehouse",
+    subtitle: "FGJEM · 2024",
+    challenge: "The attorney's office needed to manage thousands of digital pieces of evidence securely while enabling real-time collaboration between investigators, prosecutors, and legal teams across 50+ agencies.",
+    approach: [
+      "Designed microservices architecture with independent services for evidence ingestion, storage, retrieval, and audit trails",
+      "Implemented WebSocket-based real-time updates so all stakeholders saw immediate changes",
+      "Integrated LibreOffice for in-browser document collaboration",
+      "Built comprehensive audit logging for legal compliance"
+    ],
+    impact: "Enabled 50+ agencies to collaborate on evidence management with 60% faster retrieval times and complete chain-of-custody tracking.",
+    tags: ["Microservices", "WebSockets", "TypeScript", "Laravel", "React"],
+    metrics: { value: "50+", label: "Agencies" },
+    link: "https://fgjem.edomex.gob.mx"
+  },
+  {
+    title: "Payroll Stamping at Scale",
+    subtitle: "FGJEM · 2024",
+    challenge: "Government regulations require every payroll transaction to be stamped and certified by a third-party government body. The existing system couldn't handle the volume, causing delays in salary payments for thousands of employees.",
+    approach: [
+      "Architected event-driven system using message queues to handle 1M+ daily stamp requests",
+      "Implemented distributed caching strategy to prevent database overload during peak hours",
+      "Designed automatic retry mechanisms with dead-letter queues for failed transactions",
+      "Built real-time monitoring dashboard for operational visibility"
+    ],
+    impact: "Processed 1M+ daily stamps with 99.9% uptime. Reduced failed transactions from 3% to near-zero through intelligent retry mechanisms.",
+    tags: ["Event-Driven", "RabbitMQ", "Redis", "Node.js", "React"],
+    metrics: { value: "1M+", label: "Daily Stamps" },
+    link: null
+  },
+  {
+    title: "Risk Questionnaire Platform",
+    subtitle: "IGECEM · 2023",
+    challenge: "The institution needed to assess occupational risks across all government employees but had fragmented systems with inconsistent data. Questions had to be customized per department and reports needed to meet legal requirements.",
+    approach: [
+      "Applied Hexagonal Architecture to separate business logic from infrastructure concerns",
+      "Designed dynamic questionnaire engine that adapts to role and department",
+      "Built PDF and Excel report generation with legal compliance formatting",
+      "Created optimized database queries reducing report generation time by 60%"
+    ],
+    impact: "Centralized risk assessment for 10,000+ employees with standardized compliance reporting and 60% improvement in report generation speed.",
+    tags: ["Hexagonal Architecture", "PHP", "React", "MySQL", "JWT"],
+    metrics: { value: "60%", label: "Faster Reports" },
+    link: "https://miigecem.edomex.gob.mx/cuestionario/"
+  }
+];
+---
+
+<section id="case-studies" class="py-24 border-b border-zinc-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-4">Technical Deep Dives</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-zinc-100">
+        Case Studies
+      </h2>
+      <p class="mt-4 text-zinc-400 max-w-2xl mx-auto">
+        Problems I've tackled, architectural decisions I've made, and the impact those decisions had on the business and users.
+      </p>
+    </div>
+    
+    <div class="space-y-16">
+      {caseStudies.map((study, index) => (
+        <CaseStudyCard study={study} index={index} />
+      ))}
+    </div>
+  </div>
+</section>

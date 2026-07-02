@@ -1,0 +1,107 @@
+---
+import ExternalLinkIcon from "./icons/ExternalLinkIcon.astro";
+
+interface CaseStudy {
+  title: string;
+  subtitle: string;
+  challenge: string;
+  approach: string[];
+  impact: string;
+  tags: string[];
+  metrics: { value: string; label: string };
+  link: string | null;
+}
+
+interface Props {
+  study: CaseStudy;
+  index: number;
+}
+
+const { study, index } = Astro.props;
+const isEven = index % 2 === 0;
+---
+
+<article class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+  <div class={`lg:col-span-7 ${!isEven ? 'lg:order-2' : ''}`}>
+    <div class="flex items-center gap-4 mb-4">
+      <span class="text-sm text-zinc-500 font-medium">{study.subtitle}</span>
+    </div>
+    
+    <h3 class="text-2xl md:text-3xl font-bold text-zinc-100 mb-6">
+      {study.title}
+    </h3>
+    
+    <div class="space-y-8">
+      <div>
+        <h4 class="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">The Challenge</h4>
+        <p class="text-zinc-300 leading-relaxed">{study.challenge}</p>
+      </div>
+      
+      <div>
+        <h4 class="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">The Approach</h4>
+        <ul class="space-y-3">
+          {study.approach.map((item) => (
+            <li class="flex items-start gap-3 text-zinc-300">
+              <span class="mt-2 w-1.5 h-1.5 rounded-full bg-zinc-600 flex-shrink-0"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">The Impact</h4>
+        <p class="text-zinc-300 leading-relaxed">{study.impact}</p>
+      </div>
+    </div>
+    
+    <div class="mt-8 flex flex-wrap gap-2">
+      {study.tags.map((tag) => (
+        <span class="px-3 py-1 text-xs font-medium text-zinc-400 border border-zinc-700 rounded-full">
+          {tag}
+        </span>
+      ))}
+    </div>
+  </div>
+  
+  <div class={`lg:col-span-5 ${!isEven ? 'lg:order-1' : ''}`}>
+    <div class="sticky top-32">
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-8">
+        <div class="text-center mb-6">
+          <p class="text-5xl md:text-6xl font-bold text-zinc-100">{study.metrics.value}</p>
+          <p class="text-sm text-zinc-500 mt-2">{study.metrics.label}</p>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="h-px bg-zinc-800"></div>
+          
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div>
+              <p class="text-xs text-zinc-500 uppercase tracking-wider">Role</p>
+              <p class="text-sm text-zinc-300 mt-1">Lead Architect</p>
+            </div>
+            <div>
+              <p class="text-xs text-zinc-500 uppercase tracking-wider">Type</p>
+              <p class="text-sm text-zinc-300 mt-1">Backend Systems</p>
+            </div>
+          </div>
+          
+          {study.link && (
+            <>
+              <div class="h-px bg-zinc-800"></div>
+              <a
+                href={study.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-zinc-300 border border-zinc-700 rounded-lg hover:bg-zinc-800/50 hover:border-zinc-600 transition-colors"
+              >
+                View Live
+                <ExternalLinkIcon width="14" height="14" />
+              </a>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

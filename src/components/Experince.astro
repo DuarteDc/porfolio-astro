@@ -1,31 +1,41 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
+
+const experiences = [
+  {
+    title: "Jefe de Departamento — FGJEM",
+    description: "Leading the Software Development department, managing technical teams and architectural decisions. Designed and implemented an evidence warehouse system using microservices architecture with Node.js, WebSockets, React, and Laravel + TypeScript. Built pre-denuncia en línea platform with Next.js, MySQL, Prisma, and Docker CI/CD. Maintained and developed the payroll system with automated GitHub Actions deployments and semantic versioning.",
+    year: "May 2024 - Present"
+  },
+  {
+    title: "Analista de Sistemas — IGECEM",
+    description: "Developed a risk questionnaire system with PHP REST API, JWT authentication, PDF/Excel report generation, and hexagonal architecture for clean separation of concerns. Built the frontend with React, TypeScript, Tailwind CSS, and NextUI. Integrated CI/CD practices on Linux servers.",
+    year: "Sep 2023 - May 2024"
+  },
+  {
+    title: "Full Stack Developer — Digital Pineapple",
+    description: "Built and scaled platforms serving thousands of users: course platform with Laravel, MySQL, and Livewire; e-commerce with Next.js, Tailwind, and Redux; REST APIs with hexagonal architecture using Node.js, Express, and MongoDB. Developed mobile applications with React Native integrating OAuth and WebSockets.",
+    year: "May 2021 - May 2023"
+  }
+];
 ---
 
 <section
   id="experience"
-  class="w-ful py-20 text-white xl:px-40 [&>article]:transition-all [&>article]:duration-300 [&>article]:mx-1 [&>article]:lg:ml-10 overflow-hidden normal-text"
+  class="w-full py-20 text-white xl:px-40 overflow-hidden normal-text"
 >
   <h3
-    class="bg-gradient-to-t from-purple-950 to-purple-100 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold uppercase font-[Poppins]"
+    class="bg-gradient-to-t from-purple-950 to-purple-100 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold uppercase font-[Poppins] mb-12"
   >
-    EXPERIENCE
+    Experience
   </h3>
-  <div class="grid gap-5">
-    <ExperienceItem
-      title={`FGJEM - Software Engineer`}
-      description={`Software engineer with extensive experience in custom application development, technology project management, and designing innovative solutions based on emerging technologies. Focused on process automation through DevOps practices.`}
-      year="2024 - 2025"
-    />
-    <ExperienceItem
-      title={`IGECEM - Fullstack Developer`}
-      description={`Software developer as an external consultant, specializing in the improvement and optimization of internal systems, providing efficient solutions aligned with business objectives.`}
-      year="2023 - 2024"
-    />
-    <ExperienceItem
-      title={`Digital Pineapple - Fullstack Developer`}
-      description={`As a full-stack developer, I led the creation of robust and scalable platforms designed to serve thousands of users. My approach integrated the versatility of front-end and back-end development.`}
-      year="2021 - 2023"
-    />
+  <div class="grid gap-6">
+    {experiences.map((exp) => (
+      <ExperienceItem
+        title={exp.title}
+        description={exp.description}
+        year={exp.year}
+      />
+    ))}
   </div>
 </section>

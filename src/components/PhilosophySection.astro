@@ -1,0 +1,50 @@
+---
+const principles = [
+  {
+    title: "Architecture Serves the Problem",
+    description: "I don't choose technologies or patterns because they're trendy. I design systems that solve specific problems at scale. Microservices when team autonomy matters. Hexagonal architecture when business logic needs protection. Event-driven when decoupling enables resilience."
+  },
+  {
+    title: "Reliability is Non-Negotiable",
+    description: "For government systems handling citizen data, 99.9% uptime isn't aspirational—it's required. I design for failure: retry mechanisms, dead-letter queues, circuit breakers, and comprehensive monitoring aren't optional extras."
+  },
+  {
+    title: "Data Ownership and Boundaries",
+    description: "Services should own their data. I've learned through experience that cross-service database queries create tight coupling and deployment nightmares. Clear boundaries enable independent scaling and team autonomy."
+  },
+  {
+    title: "Lead through Code and Example",
+    description: "Technical leadership means staying hands-on. I architect systems, write code, mentor teams, and establish standards—because credibility comes from doing, not just directing."
+  }
+];
+---
+
+<section class="py-24 border-b border-zinc-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16">
+      <div>
+        <p class="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-4">How I Work</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-zinc-100 mb-6">
+          Technical Philosophy
+        </h2>
+        <p class="text-zinc-400 leading-relaxed">
+          Years of building distributed systems have taught me that good architecture isn't about choosing the latest patterns—it's about understanding trade-offs and making decisions that serve the business problem.
+        </p>
+        
+        <div class="mt-8 p-6 rounded-xl border border-zinc-800 bg-zinc-900/30">
+          <p class="text-sm text-zinc-500 mb-2">Currently exploring</p>
+          <p class="text-zinc-300 font-medium">Kubernetes orchestration · Golang · Event-driven microservices</p>
+        </div>
+      </div>
+      
+      <div class="space-y-8">
+        {principles.map((principle) => (
+          <div class="border-l-2 border-zinc-800 pl-6">
+            <h3 class="text-lg font-semibold text-zinc-200 mb-2">{principle.title}</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">{principle.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

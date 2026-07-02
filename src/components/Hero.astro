@@ -1,0 +1,85 @@
+---
+import DownloadIcon from "./icons/DownloadIcon.astro";
+import ArrowIcon from "./icons/ArrowIcon.astro";
+---
+
+<section id="about" class="min-h-[85vh] flex items-center border-b border-zinc-800">
+  <div class="max-w-6xl mx-auto px-6 py-20 w-full">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/50 mb-8">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-xs text-zinc-400 font-medium">Open to opportunities</span>
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-100 leading-tight tracking-tight">
+          Eduardo Duarte<br />
+          <span class="text-zinc-500">Clemente</span>
+        </h1>
+        
+        <div class="mt-6 space-y-2">
+          <p class="text-xl md:text-2xl text-zinc-300 font-medium">
+            Senior Backend Engineer
+          </p>
+          <p class="text-lg text-zinc-500">
+            Technical Lead · System Architect
+          </p>
+        </div>
+        
+        <p class="mt-8 text-lg text-zinc-400 leading-relaxed max-w-2xl">
+          I design and build distributed backend systems that handle millions of daily operations. 
+          Currently leading the Software Development Department at FGJEM, where I architect solutions 
+          for government digital transformation.
+        </p>
+        
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a
+            href="/EduardoDuarteCv.pdf"
+            download
+            class="inline-flex items-center gap-2 px-6 py-3 bg-zinc-100 text-zinc-900 font-medium rounded-lg hover:bg-zinc-200 transition-colors"
+          >
+            <DownloadIcon width="18" height="18" />
+            Download CV
+          </a>
+          <a
+            href="#case-studies"
+            class="inline-flex items-center gap-2 px-6 py-3 border border-zinc-700 text-zinc-300 font-medium rounded-lg hover:bg-zinc-800/50 hover:border-zinc-600 transition-colors"
+          >
+            View Work
+            <ArrowIcon width="18" height="18" />
+          </a>
+        </div>
+        
+        <div class="mt-12 flex items-center gap-6 text-sm text-zinc-500">
+          <a href="https://mx.linkedin.com/in/duartedc" target="_blank" class="hover:text-zinc-300 transition-colors">
+            LinkedIn
+          </a>
+          <span>·</span>
+          <a href="https://github.com/DuarteDc" target="_blank" class="hover:text-zinc-300 transition-colors">
+            GitHub
+          </a>
+          <span>·</span>
+          <a href="mailto:duartedc17@gmail.com" class="hover:text-zinc-300 transition-colors">
+            duartedc17@gmail.com
+          </a>
+        </div>
+      </div>
+      
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="relative">
+          <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700/50">
+            <img
+              src="/imgs/me-pixel-art-no-bg.png"
+              alt="Eduardo Duarte Clemente"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="absolute -bottom-4 -right-4 px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-lg">
+            <p class="text-xs text-zinc-400">Based in</p>
+            <p class="text-sm font-medium text-zinc-200">Lerma, Mexico</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

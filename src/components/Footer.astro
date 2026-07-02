@@ -1,0 +1,52 @@
+---
+import GithubIcon from "./icons/GithubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import MailIcon from "./icons/MailIcon.astro";
+---
+
+<footer class="border-t border-zinc-800 bg-zinc-950">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="text-center md:text-left">
+        <p class="text-zinc-400 text-sm">
+          Eduardo Duarte Clemente
+        </p>
+        <p class="text-zinc-600 text-sm mt-1">
+          Mexico · Available for opportunities
+        </p>
+      </div>
+      
+      <div class="flex items-center gap-6">
+        <a
+          href="mailto:duartedc17@gmail.com"
+          class="text-zinc-400 hover:text-zinc-100 transition-colors"
+          aria-label="Email"
+        >
+          <MailIcon width="20" height="20" />
+        </a>
+        <a
+          href="https://mx.linkedin.com/in/duartedc"
+          target="_blank"
+          class="text-zinc-400 hover:text-zinc-100 transition-colors"
+          aria-label="LinkedIn"
+        >
+          <LinkedinIcon width="20" height="20" />
+        </a>
+        <a
+          href="https://github.com/DuarteDc"
+          target="_blank"
+          class="text-zinc-400 hover:text-zinc-100 transition-colors"
+          aria-label="GitHub"
+        >
+          <GithubIcon width="20" height="20" />
+        </a>
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-8 border-t border-zinc-800 text-center">
+      <p class="text-zinc-600 text-xs">
+        Designed and built with Astro · 2024
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,6 +1,7 @@
 ---
 import GithubIcon from "./icons/GithubIcon.astro";
 import LinkedinIcon from "./icons/LinkedinIcon.astro";
+import DownloadIcon from "./icons/DownloadIcon.astro";
 ---
 
 <header
@@ -15,7 +16,7 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
   >
     <img
       src="/imgs/me-pixel-art-no-bg.png"
-      alt="cursor pointer"
+      alt="Eduardo Duarte Clemente"
       class="w-full h-full object-cover mix-blend-lighten shadow-2xl"
     />
   </div>
@@ -24,41 +25,54 @@ import LinkedinIcon from "./icons/LinkedinIcon.astro";
       <hr
         class="h-[1px] w-[6rem] bg-gradient-to-l from-purple-500 to-purple-900 border-none"
       />
-      <p>DuarteBv</p>
+      <p class="text-gray-400 text-sm tracking-widest uppercase">Portfolio</p>
     </span>
     <h1
-      class="text-[3.5rem] lg:text-[5rem] xl:text-[8rem] break-words w-full leading-none font-[Poppins] bg-gradient-to-t from-purple-900 to-purple-100 inline-block text-transparent py-5 bg-clip-text text-4xl lg:text-6xl font-bold"
+      class="text-[3.5rem] lg:text-[5rem] xl:text-[7rem] break-words w-full leading-none font-[Poppins] bg-gradient-to-t from-purple-400 to-purple-100 inline-block text-transparent py-3 bg-clip-text text-4xl lg:text-6xl font-bold"
     >
-      Software Engineer<b
-        class="bg-gradient-to-t from-purple-950 to-purple-100 inline-block text-transparent lg:py-5 bg-clip-text font-bold"
+      Eduardo Duarte Clemente<b
+        class="bg-gradient-to-t from-purple-600 to-purple-100 inline-block text-transparent py-3 bg-clip-text font-bold"
         >.</b
       >
     </h1>
-    <span
-      class="lg:mt-10 block break-words w-full lg:w-7/12 text-sm font-bold text-gray-400"
-    >
-      Passionate about creating engaging user experiences with a full-stack
-      approach. I transform ideas into functional products, automate processes,
-      and develop scalable and efficient systems.
-    </span>
-    <div class="mt-5 flex items-center gap-3 relative z-20">
+    <div class="flex flex-col gap-2 mt-2">
+      <p class="text-purple-400 text-lg lg:text-xl font-semibold tracking-wide">
+        Senior Backend Engineer
+      </p>
+      <p class="text-purple-400/70 text-base lg:text-lg font-medium">
+        Jefe de Departamento · Technical Lead
+      </p>
+    </div>
+    <p class="lg:mt-8 break-words w-full lg:w-9/12 text-sm lg:text-base text-gray-400 leading-relaxed">
+      Building and scaling distributed backend systems with 4+ years of experience. Leading technical departments, designing microservices architectures, and orchestrating containerized deployments at scale.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center gap-3 relative z-20">
       <a
         href="https://mx.linkedin.com/in/duartedc"
         type="button"
         target="_blank"
-        class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
+        class="flex items-center gap-2 px-5 py-2.5 rounded-md bg-purple-600 hover:bg-purple-500 transition-all duration-300 font-medium"
       >
-        <LinkedinIcon width="20" height="20" />
+        <LinkedinIcon width="18" height="18" />
         LinkedIn
       </a>
       <a
         href="https://github.com/DuarteDc"
         type="button"
         target="_blank"
-        class="flex items-center gap-3 px-4 py-2 rounded-md border hover:transition-all hover:duration-500 hover:border-purple-500 hover:bg-purple-500/50 cursor-pointer"
+        class="flex items-center gap-2 px-5 py-2.5 rounded-md border border-gray-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all duration-300 font-medium"
       >
-        <GithubIcon width="20" height="20" />
-        Github
+        <GithubIcon width="18" height="18" />
+        GitHub
+      </a>
+      <a
+        href="/EduardoDuarteCv.pdf"
+        download
+        type="button"
+        class="flex items-center gap-2 px-5 py-2.5 rounded-md border border-gray-700 hover:border-cyan-500 hover:bg-cyan-500/10 transition-all duration-300 font-medium text-cyan-400"
+      >
+        <DownloadIcon width="18" height="18" />
+        Descargar CV
       </a>
     </div>
   </div>

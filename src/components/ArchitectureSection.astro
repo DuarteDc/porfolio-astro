@@ -1,0 +1,72 @@
+---
+import MicroservicesArchitecture from "./diagrams/MicroservicesArchitecture.astro";
+import HexagonalArchitecture from "./diagrams/HexagonalArchitecture.astro";
+---
+
+<section class="py-24 border-b border-zinc-800">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-4">System Design</p>
+      <h2 class="text-3xl md:text-4xl font-bold text-zinc-100">
+        Architecture
+      </h2>
+      <p class="mt-4 text-zinc-400 max-w-2xl mx-auto">
+        Visual representations of the systems I've designed and the architectural patterns I apply.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/30 overflow-hidden">
+        <div class="p-6 border-b border-zinc-800">
+          <h3 class="text-lg font-semibold text-zinc-200">Microservices Architecture</h3>
+          <p class="text-sm text-zinc-500 mt-1">Evidence Warehouse System</p>
+        </div>
+        <div class="p-6">
+          <MicroservicesArchitecture />
+        </div>
+      </div>
+      
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/30 overflow-hidden">
+        <div class="p-6 border-b border-zinc-800">
+          <h3 class="text-lg font-semibold text-zinc-200">Hexagonal Architecture</h3>
+          <p class="text-sm text-zinc-500 mt-1">Risk Questionnaire System</p>
+        </div>
+        <div class="p-6">
+          <HexagonalArchitecture />
+        </div>
+      </div>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30">
+        <div class="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-zinc-200 mb-2">Database per Service</h4>
+        <p class="text-sm text-zinc-500">Each service owns its data. No cross-service queries. Enables independent deployment and scaling.</p>
+      </div>
+      
+      <div class="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30">
+        <div class="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-zinc-200 mb-2">Event-Driven</h4>
+        <p class="text-sm text-zinc-500">Async communication via message queues. Decouples producers from consumers, enabling resilience and scale.</p>
+      </div>
+      
+      <div class="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30">
+        <div class="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-zinc-200 mb-2">Fault Tolerance</h4>
+        <p class="text-sm text-zinc-500">Retry mechanisms, dead-letter queues, and circuit breakers. Failures should be gracefully handled.</p>
+      </div>
+    </div>
+  </div>
+</section>

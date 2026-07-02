@@ -1,48 +1,61 @@
-<section>
-  <div
-    class="cursor-pointer dock fixed normal-text top-5 text-white rounded-full overflow-hidden flex bg-transparent backdrop-blur-3xl opacity-0 transition-all duration-400 ease-out hover:opacity-100
-    hover:transition-all hover:duration-300 hover:ease-in right-10 before:w-full before:h-full before:absolute before:-z-10 before:bg-black/10"
-  >
-    <a
-      href="
-  #about-me"
-      type="button"
-      class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-    >
-      Home
-    </a>
-    <a
-      href="#experience"
-      type="button"
-      class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-      >Experience</a
-    >
-    <a
-      href="#projects"
-      type="button"
-      class="hover:bg-white/20 hover:backdrop-blur-3xl py-2 px-4 rounded-full hover:transition-all hover:duration-200 transition-all duration-200"
-      >Projects</a
-    >
+---
+import GithubIcon from "./icons/GithubIcon.astro";
+import LinkedinIcon from "./icons/LinkedinIcon.astro";
 
-    <script is:inline>
-      const dock = document.querySelectorAll(".dock");
-      dock.forEach((dock) => {
-        document.addEventListener("scroll", () => {
-          if (window.scrollY < 100) {
-            dock.classList.remove("opacity-100");
-            dock.classList.remove("opacity-25");
-            dock.classList.add("opacity-0");
-          } else if (window.scrollY > 100 && window.scrollY < 300) {
-            dock.classList.remove("opacity-0");
-            dock.classList.add("opacity-25");
-          } else {
-            dock.classList.remove("opacity-25");
-            dock.classList.add("opacity-100");
-          }
-        });
-      });
+const navLinks = [
+  { href: "#about", label: "About" },
+  { href: "#impact", label: "Impact" },
+  { href: "#case-studies", label: "Case Studies" },
+  { href: "#architecture", label: "Architecture" },
+  { href: "#experience", label: "Experience" },
+  { href: "#open-source", label: "Open Source" },
+  { href: "#contact", label: "Contact" },
+];
+---
 
-      // TODO navigata to sectuib
-    </script>
-  </div>
-</section>
+<header class="sticky top-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-lg">
+  <nav class="max-w-6xl mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <a href="#" class="text-lg font-semibold text-zinc-100 tracking-tight">
+        Eduardo<span class="text-zinc-500">.</span>
+      </a>
+      
+      <div class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-zinc-400 hover:text-zinc-100 transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <a
+          href="https://github.com/DuarteDc"
+          target="_blank"
+          class="text-zinc-400 hover:text-zinc-100 transition-colors"
+          aria-label="GitHub"
+        >
+          <GithubIcon width="20" height="20" />
+        </a>
+        <a
+          href="https://mx.linkedin.com/in/duartedc"
+          target="_blank"
+          class="text-zinc-400 hover:text-zinc-100 transition-colors"
+          aria-label="LinkedIn"
+        >
+          <LinkedinIcon width="20" height="20" />
+        </a>
+        <a
+          href="/EduardoDuarteCv.pdf"
+          download
+          class="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-zinc-100 text-zinc-900 rounded-lg hover:bg-zinc-200 transition-colors"
+        >
+          Download CV
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

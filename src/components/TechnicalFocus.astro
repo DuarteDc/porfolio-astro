@@ -1,0 +1,40 @@
+---
+const focusAreas = [
+  {
+    title: "Backend Architecture",
+    description: "Designing scalable APIs, microservices, and distributed systems with Node.js, NestJS, and Laravel"
+  },
+  {
+    title: "Container Orchestration",
+    description: "Kubernetes and Rancher for managing containerized deployments at scale"
+  },
+  {
+    title: "Microservices & Hexagonal",
+    description: "Building independent services with autonomous databases using hexagonal and clean architecture patterns"
+  },
+  {
+    title: "Technical Leadership",
+    description: "Leading departments, establishing standards, CI/CD pipelines, and mentoring engineering teams"
+  }
+];
+---
+
+<section id="focus" class="w-full py-16 lg:py-24 text-white">
+  <h3 class="text-3xl lg:text-4xl font-bold mb-12">
+    <span class="bg-gradient-to-r from-purple-400 to-purple-200 inline-block text-transparent bg-clip-text">
+      Technical Focus
+    </span>
+  </h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {focusAreas.map((area) => (
+      <div class="group p-6 rounded-xl border border-gray-800 hover:border-purple-500/50 bg-gray-900/30 transition-all duration-300">
+        <h4 class="text-xl font-semibold text-purple-300 mb-2 group-hover:text-purple-200 transition-colors">
+          {area.title}
+        </h4>
+        <p class="text-gray-400 text-sm leading-relaxed">
+          {area.description}
+        </p>
+      </div>
+    ))}
+  </div>
+</section>

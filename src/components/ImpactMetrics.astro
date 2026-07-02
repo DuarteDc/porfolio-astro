@@ -1,0 +1,33 @@
+---
+const metrics = [
+  {
+    value: "4+",
+    label: "Years Building Systems",
+    description: "Full stack development with backend specialization"
+  },
+  {
+    value: "1M+",
+    label: "Daily Transactions",
+    description: "Payroll stamps and evidence records processed"
+  },
+  {
+    value: "3",
+    label: "Departments Led",
+    description: "Technical leadership and team management"
+  }
+];
+---
+
+<section id="impact" class="w-full py-16 lg:py-24 text-white">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+    {metrics.map((metric) => (
+      <div class="text-center p-8 rounded-2xl bg-gradient-to-b from-purple-900/20 to-transparent border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300">
+        <p class="text-5xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 to-purple-200 inline-block text-transparent bg-clip-text">
+          {metric.value}
+        </p>
+        <p class="text-purple-400 font-semibold mt-3 text-lg">{metric.label}</p>
+        <p class="text-gray-500 text-sm mt-2">{metric.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
