@@ -18,71 +18,266 @@ const SecondFormString = fs.readFileSync(
 );
 ---
 
-<Layout title="Stepper UI Demo">
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+<Layout title="stepper-ui | React Multi-Step Form Component">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <header class="mb-16 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-900/50 mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        <span class="text-xs text-zinc-400 font-medium">Open Source</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-zinc-100 mb-4">
+        stepper-ui
+      </h1>
+      <p class="text-lg text-zinc-400 max-w-2xl mx-auto mb-6">
+        A React component library for building accessible, customizable multi-step forms with TypeScript support.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="https://www.npmjs.com/package/stepper-ui"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-zinc-100 text-zinc-900 rounded-lg hover:bg-zinc-200 transition-colors"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M0 0h12v12H0V0zm12 12h12v12H12V12zM0 12v12h12V12H0zM4 4h4v4H4V4z"/>
+          </svg>
+          npm
+        </a>
+        <a
+          href="https://github.com/DuarteDc/stepper-ui-library"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-zinc-700 text-zinc-300 rounded-lg hover:bg-zinc-800 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </header>
+
+    <section class="mb-16">
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
+        <div class="px-6 py-4 border-b border-zinc-800 bg-zinc-800/30">
+          <h2 class="text-lg font-semibold text-zinc-100">Live Demo</h2>
+          <p class="text-sm text-zinc-500 mt-1">Fill out the form to see validation in action</p>
+        </div>
+        <div class="p-8">
+          <StepperUI client:load />
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-zinc-100 mb-6">Installation</h2>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+        <div class="space-y-4">
+          <div>
+            <p class="text-sm text-zinc-500 mb-2">Install the package</p>
+            <code class="block text-sm text-zinc-300 bg-zinc-950 px-4 py-3 rounded-lg font-mono">
+              npm install stepper-ui
+            </code>
+          </div>
+          <div>
+            <p class="text-sm text-zinc-500 mb-2">Install peer dependencies</p>
+            <code class="block text-sm text-zinc-300 bg-zinc-950 px-4 py-3 rounded-lg font-mono">
+              npm install react react-dom clsx tailwind-merge
+            </code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-zinc-100 mb-6">Quick Start</h2>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
+        <div class="px-6 py-4 border-b border-zinc-800 bg-zinc-800/30">
+          <p class="text-sm text-zinc-400">Basic implementation with two steps and validation</p>
+        </div>
+        <CodeBlock
+          filename="your-stepper.tsx"
+          language="tsx"
+          code={`import { Stepper } from 'stepper-ui'
+import { FormPersonalData } from './FormPersonalData'
+import { FormAccount } from './FormAccount'
+
+const MyForm = () => {
+  const steps = [
+    { name: 'Personal', component: FormPersonalData },
+    { name: 'Account', component: FormAccount }
+  ]
+
+  return (
+    <Stepper
+      steps={steps}
+      renderButtons={({ backStep, nextStep }) => (
+        <div className="flex justify-between">
+          <button onClick={backStep}>Previous</button>
+          <button onClick={nextStep}>Next</button>
+        </div>
+      )}
     />
-  </head>
+  )
+}`}
+        />
+      </div>
+    </section>
 
-  <h1
-    class="text-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-t from-purple-950 to-purple-100 py-5"
-  >
-    Stepper UI Demo
-  </h1>
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-zinc-100 mb-6">Project Structure</h2>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+        <div class="space-y-3 font-mono text-sm">
+          <div class="flex items-center gap-2">
+            <span class="text-zinc-500">src/</span>
+          </div>
+          <div class="flex items-center gap-2 pl-4">
+            <span class="text-zinc-500">components/</span>
+          </div>
+          <div class="flex items-center gap-2 pl-8">
+            <span class="text-zinc-500">stepper/</span>
+          </div>
+          <div class="flex items-center gap-2 pl-12 text-zinc-400">
+            <span>├── StepIcon.tsx</span>
+          </div>
+          <div class="flex items-center gap-2 pl-12 text-zinc-400">
+            <span>├── StepperButtons.tsx</span>
+          </div>
+          <div class="flex items-center gap-2 pl-12 text-zinc-400">
+            <span>├── StepOne.tsx</span>
+          </div>
+          <div class="flex items-center gap-2 pl-12 text-zinc-400">
+            <span>└── StepTwo.tsx</span>
+          </div>
+          <div class="flex items-center gap-2 pl-8 text-zinc-300">
+            <span>stepper-ui.tsx</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="my-10">
-    <StepperUI client:load />
-  </section>
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-zinc-100 mb-6">Full Example</h2>
+      
+      <div class="space-y-6">
+        <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
+          <div class="px-6 py-4 border-b border-zinc-800 bg-zinc-800/30">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm font-medium text-zinc-300">stepper-ui.tsx</h3>
+              <span class="text-xs text-zinc-500">Main wrapper component</span>
+            </div>
+          </div>
+          <CodeBlock
+            filename="stepper-ui.tsx"
+            language="tsx"
+            code={StepperUIString}
+          />
+        </div>
 
-  <section class="text-gray-300 my-10">
-    <h2 class="text-2xl font-semibold mb-4">Documentation & Usage</h2>
-    <p>
-      <strong>StepperUI</strong> is a React multi-step form component with validation
-      and state persistence. Navigate through steps, fill forms, and see real-time
-      updates.
-    </p>
-    <ul class="list-disc pl-5 mt-3">
-      <li>Supports multiple steps</li>
-      <li>Customizable step icons and buttons</li>
-    </ul>
-  </section>
+        <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
+          <div class="px-6 py-4 border-b border-zinc-800 bg-zinc-800/30">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm font-medium text-zinc-300">first-form.tsx</h3>
+              <span class="text-xs text-zinc-500">Step 1: Personal information with validation</span>
+            </div>
+          </div>
+          <CodeBlock
+            filename="first-form.tsx"
+            language="tsx"
+            code={FirstFormString}
+          />
+        </div>
 
-  <section class="lg:grid lg:grid-cols-2 lg:gap-4 lg:mb-10">
-    <div class="w-full overflow-x-auto">
-      <CodeBlock
-        filename="first-form.tsx"
-        language="tsx"
-        code={FirstFormString}
-      />
-    </div>
-    <div class="w-full overflow-x-auto">
-      <CodeBlock
-        filename="second-form.tsx"
-        language="tsx"
-        code={SecondFormString}
-      />
-    </div>
-    <div class="col-span-2">
-      <CodeBlock
-        filename="stepper-ui.tsx"
-        language="tsx"
-        code={StepperUIString}
-      />
-    </div>
-  </section>
+        <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
+          <div class="px-6 py-4 border-b border-zinc-800 bg-zinc-800/30">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm font-medium text-zinc-300">second-form.tsx</h3>
+              <span class="text-xs text-zinc-500">Step 2: Password with confirmation</span>
+            </div>
+          </div>
+          <CodeBlock
+            filename="second-form.tsx"
+            language="tsx"
+            code={SecondFormString}
+          />
+        </div>
+      </div>
+    </section>
 
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
-    is:inline></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js"
-    is:inline></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"
-    is:inline></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-tsx.min.js"
-    is:inline></script>
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-zinc-100 mb-6">API Reference</h2>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-zinc-800 bg-zinc-800/30">
+                <th class="px-6 py-4 text-left font-semibold text-zinc-300">Prop</th>
+                <th class="px-6 py-4 text-left font-semibold text-zinc-300">Type</th>
+                <th class="px-6 py-4 text-left font-semibold text-zinc-300">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-zinc-800">
+              <tr>
+                <td class="px-6 py-4 text-zinc-100 font-mono">steps</td>
+                <td class="px-6 py-4 text-zinc-400 font-mono">StepComponentProps[]</td>
+                <td class="px-6 py-4 text-zinc-400">Array of step components</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-zinc-100 font-mono">renderButtons</td>
+                <td class="px-6 py-4 text-zinc-400 font-mono">RenderButtonsProps</td>
+                <td class="px-6 py-4 text-zinc-400">Navigation buttons renderer</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-zinc-100 font-mono">wrapperClassName</td>
+                <td class="px-6 py-4 text-zinc-400 font-mono">string</td>
+                <td class="px-6 py-4 text-zinc-400">Tailwind classes for container</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-zinc-100 font-mono">renderStepIcon</td>
+                <td class="px-6 py-4 text-zinc-400 font-mono">function</td>
+                <td class="px-6 py-4 text-zinc-400">Custom step indicator renderer</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-zinc-100 mb-6">Features</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30">
+          <h3 class="font-semibold text-zinc-200 mb-2">TypeScript Support</h3>
+          <p class="text-sm text-zinc-400">Full type definitions included. Step components can use forwardRef with ValidateStep for validation.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30">
+          <h3 class="font-semibold text-zinc-200 mb-2">Validation</h3>
+          <p class="text-sm text-zinc-400">Sync and async validation. canContinue can return boolean or Promise&lt;boolean&gt;.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30">
+          <h3 class="font-semibold text-zinc-200 mb-2">Customizable</h3>
+          <p class="text-sm text-zinc-400">Custom step icons, classes, and rendering for complete flexibility.</p>
+        </div>
+        <div class="p-6 rounded-xl border border-zinc-800 bg-zinc-900/30">
+          <h3 class="font-semibold text-zinc-200 mb-2">Performant</h3>
+          <p class="text-sm text-zinc-400">Memoized components prevent unnecessary re-renders. Only active step is mounted.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16">
+      <div class="rounded-xl border border-zinc-800 bg-gradient-to-r from-zinc-900/50 to-zinc-800/30 p-8 text-center">
+        <h2 class="text-xl font-bold text-zinc-100 mb-2">Ready to use?</h2>
+        <p class="text-zinc-400 mb-6">Install stepper-ui and start building multi-step forms today.</p>
+        <code class="inline-block text-sm text-zinc-300 bg-zinc-950 px-4 py-3 rounded-lg font-mono">
+          npm install stepper-ui
+        </code>
+      </div>
+    </section>
+  </div>
 </Layout>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" is:inline></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js" is:inline></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js" is:inline></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-tsx.min.js" is:inline></script>
