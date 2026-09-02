@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: "How to Create Docker Images with Semantic Versioning using GitHub Actions"
 description: "A step-by-step guide to automate Docker image versioning with semantic release and GitHub Actions for production-ready deployments."
 author: "Eduardo Duarte"
-publishDate: "2024-12-15"
+publishDate: "2026-05-10"
 readingTime: 10
 tags: ["Docker", "GitHub Actions", "DevOps", "CI/CD"]
 ---
